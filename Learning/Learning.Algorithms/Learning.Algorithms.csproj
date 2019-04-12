@@ -41,6 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\PrimeAlgorithmType_Values.cs" />
+    <Compile Include="Prime\BruteForcePrimeHelper.cs" />
+    <Compile Include="Prime\IPrimeHelper.cs" />
+    <Compile Include="Prime\PrimeHelper.cs" />
+    <Compile Include="Prime\PrimeHelperWithTimings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
