@@ -6,15 +6,16 @@ namespace Learning.Algorithms.Prime
     public class PrimeHelper : IPrimeHelper
     {
         private IPrimeHelper _Inner;
-        public PrimeAlgorithmType_Values _AlgoType { get; }
+        public PrimeAlgorithmType_Values AlgoType { get; }
 
         public PrimeHelper(PrimeAlgorithmType_Values algoType)
         {
-            _AlgoType = algoType;
+            AlgoType = algoType;
             _Inner = GetPrimeHelper(algoType);
         }
         public PrimeHelper(IPrimeHelper inner)
         {
+            AlgoType = inner.AlgoType;
             _Inner = inner;
         }
 

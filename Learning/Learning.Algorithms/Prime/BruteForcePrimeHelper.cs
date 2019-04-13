@@ -1,7 +1,12 @@
-﻿namespace Learning.Algorithms.Prime
+﻿using Learning.Algorithms.Enums;
+
+namespace Learning.Algorithms.Prime
 {
     internal class BruteForcePrimeHelper : IPrimeHelper
     {
+        public PrimeAlgorithmType_Values AlgoType
+            => PrimeAlgorithmType_Values.BruteForce;
+
         public bool IsPrime(int number)
         {
             if (number <= 1)

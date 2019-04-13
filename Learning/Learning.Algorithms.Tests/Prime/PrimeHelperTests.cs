@@ -86,21 +86,24 @@ namespace Learning.Algorithms.Tests.Prime
             Assert.IsTrue(result.TotalTimeElapsed <= TimeSpan.FromMilliseconds(0.9));
         }
 
-        //[TestMethod]
-        //public void InstantiateWithPrimeHelper_ShouldReturnAlgoTypeCorrectly()
-        //{
-        //    var innerPrimeHelper = new MockPrimeHelper();
+        [TestMethod]
+        public void InstantiateWithPrimeHelper_ShouldReturnAlgoTypeCorrectly()
+        {
+            var innerPrimeHelper = new MockPrimeHelper();
 
-        //    _Sut = new PrimeHelper(innerPrimeHelper);
+            _Sut = new PrimeHelper(innerPrimeHelper);
 
-        //    var algoType = _Sut.AlgoType;
+            var algoType = _Sut.AlgoType;
 
-        //    Assert.AreEqual(PrimeAlgorithmType_Values._NotDefined, algoType);
-        //}
+            Assert.AreEqual(PrimeAlgorithmType_Values._NotDefined, algoType);
+        }
     }
 
     class MockPrimeHelper : IPrimeHelper
     {
+        public PrimeAlgorithmType_Values AlgoType
+            => PrimeAlgorithmType_Values._NotDefined;
+
         public bool IsPrime(int number)
         {
             return true;
