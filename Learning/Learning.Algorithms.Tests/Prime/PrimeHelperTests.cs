@@ -8,7 +8,7 @@ namespace Learning.Algorithms.Tests.Prime
     [TestClass]
     public class PrimeHelperTests
     {
-        private PrimeHelper _Sut;
+        private IPrimeHelper _Sut;
 
         [TestMethod]
         public void IsPrime_ShouldReturnFalse_IfNumberLessThanOrEqToZero()
@@ -83,7 +83,27 @@ namespace Learning.Algorithms.Tests.Prime
 
             Assert.IsNotNull(result);
             Assert.IsTrue(result.Result, $"{number} is a prime number");
-            Assert.IsTrue(result.TotalTimeElapsed <= TimeSpan.FromMilliseconds(0.1));
+            Assert.IsTrue(result.TotalTimeElapsed <= TimeSpan.FromMilliseconds(0.9));
+        }
+
+        //[TestMethod]
+        //public void InstantiateWithPrimeHelper_ShouldReturnAlgoTypeCorrectly()
+        //{
+        //    var innerPrimeHelper = new MockPrimeHelper();
+
+        //    _Sut = new PrimeHelper(innerPrimeHelper);
+
+        //    var algoType = _Sut.AlgoType;
+
+        //    Assert.AreEqual(PrimeAlgorithmType_Values._NotDefined, algoType);
+        //}
+    }
+
+    class MockPrimeHelper : IPrimeHelper
+    {
+        public bool IsPrime(int number)
+        {
+            return true;
         }
     }
 }

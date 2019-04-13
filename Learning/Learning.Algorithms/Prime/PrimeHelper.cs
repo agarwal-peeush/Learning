@@ -13,6 +13,10 @@ namespace Learning.Algorithms.Prime
             _AlgoType = algoType;
             _Inner = GetPrimeHelper(algoType);
         }
+        public PrimeHelper(IPrimeHelper inner)
+        {
+            _Inner = inner;
+        }
 
         private IPrimeHelper GetPrimeHelper(PrimeAlgorithmType_Values algoType)
         {
