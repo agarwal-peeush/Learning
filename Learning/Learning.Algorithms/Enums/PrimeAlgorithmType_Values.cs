@@ -11,5 +11,6 @@ namespace Learning.Algorithms.Enums
         _NotDefined = 0,
 
         BruteForce,
+        SieveOfEratosthenes,
     }
 }
