@@ -12,5 +12,6 @@ namespace Learning.Algorithms.Prime
         PrimeAlgorithmType_Values AlgoType { get; }
         bool IsPrime(int number);
         List<int> GetPrimeNumbers(int number);
+        List<int> GetPrimeNumbers(int start, int end);
     }
 }

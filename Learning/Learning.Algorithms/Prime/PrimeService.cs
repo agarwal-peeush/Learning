@@ -42,5 +42,10 @@ namespace Learning.Algorithms.Prime
         {
             return _Inner.GetPrimeNumbers(number);
         }
+
+        public List<int> GetPrimeNumbers(int start, int end)
+        {
+            return _Inner.GetPrimeNumbers(start, end);
+        }
     }
 }
