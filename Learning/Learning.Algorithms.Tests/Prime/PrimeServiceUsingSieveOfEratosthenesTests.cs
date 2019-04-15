@@ -147,5 +147,92 @@ namespace Learning.Algorithms.Tests.Prime
         }
 
         #endregion
+
+        #region GetPrimeNumbers(start, end)
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void GetPrimeNumbers_ShouldThrowArgumentExceptionIfStartGreaterThanEnd()
+        {
+            _Sut = new PrimeService(PrimeAlgorithmType_Values.SieveOfEratosthenes);
+            int start = 2;
+            int end = 1;
+            List<int> expectedPrimes = new List<int> { };
+
+            List<int> primes = _Sut.GetPrimeNumbers(start, end);
+
+            CollectionAssert.AreEqual(expectedPrimes, primes);
+        }
+        [TestMethod]
+        public void GetPrimeNumbers_ShouldReturnEmptyForInputOneAndOne()
+        {
+            _Sut = new PrimeService(PrimeAlgorithmType_Values.SieveOfEratosthenes);
+            int start = 1;
+            int end = 1;
+            List<int> expectedPrimes = new List<int> { };
+
+            List<int> primes = _Sut.GetPrimeNumbers(start, end);
+
+            CollectionAssert.AreEqual(expectedPrimes, primes);
+        }
+
+        [TestMethod]
+        public void GetPrimeNumbers_ShouldReturnTwoForInputOneAndTwo()
+        {
+            _Sut = new PrimeService(PrimeAlgorithmType_Values.SieveOfEratosthenes);
+            int start = 1;
+            int end = 2;
+            List<int> expectedPrimes = new List<int> { 2 };
+
+            List<int> primes = _Sut.GetPrimeNumbers(start, end);
+
+            CollectionAssert.AreEqual(expectedPrimes, primes);
+        }
+
+        [TestMethod]
+        public void GetPrimeNumbers_ShouldReturnTwoAndThreeForInputOneAndThree()
+        {
+            _Sut = new PrimeService(PrimeAlgorithmType_Values.SieveOfEratosthenes);
+            int start = 1;
+            int end = 3;
+            List<int> expectedPrimes = new List<int> { 2, 3 };
+
+            List<int> primes = _Sut.GetPrimeNumbers(start, end);
+
+            CollectionAssert.AreEqual(expectedPrimes, primes);
+        }
+        [TestMethod]
+        public void GetPrimeNumbers_ShouldReturnThreeForInputThreeAndThree()
+        {
+            _Sut = new PrimeService(PrimeAlgorithmType_Values.SieveOfEratosthenes);
+            int start = 3;
+            int end = 3;
+            List<int> expectedPrimes = new List<int> { 3 };
+
+            List<int> primes = _Sut.GetPrimeNumbers(start, end);
+
+            CollectionAssert.AreEqual(expectedPrimes, primes);
+        }
+
+        [TestMethod]
+        public void GetPrimeNumbers_ShouldReturnAllPrimesForGivenStartAndEnd()
+        {
+            _Sut = new PrimeService(PrimeAlgorithmType_Values.SieveOfEratosthenes);
+
+            Assert_GetPrimeNumbers_ReturnsExpectedPrimes(2, 4, new List<int> { 2, 3 });
+            Assert_GetPrimeNumbers_ReturnsExpectedPrimes(2, 5, new List<int> { 2, 3, 5 });
+            Assert_GetPrimeNumbers_ReturnsExpectedPrimes(2, 6, new List<int> { 2, 3, 5 });
+            Assert_GetPrimeNumbers_ReturnsExpectedPrimes(4, 7, new List<int> { 5, 7 });
+            Assert_GetPrimeNumbers_ReturnsExpectedPrimes(2, 10, new List<int> { 2, 3, 5, 7 });
+            Assert_GetPrimeNumbers_ReturnsExpectedPrimes(1, 11, new List<int> { 2, 3, 5, 7, 11 });
+            Assert_GetPrimeNumbers_ReturnsExpectedPrimes(8, 11, new List<int> { 11 });
+        }
+
+        private void Assert_GetPrimeNumbers_ReturnsExpectedPrimes(int start, int end, List<int> expectedPrimes)
+        {
+            List<int> primes = _Sut.GetPrimeNumbers(start, end);
+
+            CollectionAssert.AreEqual(expectedPrimes, primes);
+        }
+        #endregion
     }
 }
