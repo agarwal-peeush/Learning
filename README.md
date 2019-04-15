@@ -17,6 +17,15 @@ This includes learning for different types of algorithms.
                     return false
             return true
 
+    * Sieve of Eratosthenes algorithm
+    
+        This iterates through number in range x(x), x(x+1), ... upto number(N) itself and mark them false. At the end return all numbers marked as true to get prime numbers. 
+
+            1. Create a list of consecutive integers from 2 to N: (2,3,4,...,N)
+            2. Initially, let p equal to 2, the first prime number.
+            3. Starting from p*p, count up in increments of p and mark each of these numbers greater than or equal to p*p itself in the list. These numbers will be p(p+1), p(p+2), ... etc.
+            4. Find the first number greater than p in the list that is not marked. if there was no such number, stop. Otherwise, let p now equal to this number (which is the next prime), and repeat from step 3.
+
 + GetPrimeNumbers(N)
     * Brute Force algorithm
     
@@ -28,6 +37,10 @@ This includes learning for different types of algorithms.
                     add x to list
             return list
 
+    * Sieve of Eratosthenes algorithm
+        
+        Refer in method _IsPrime(N)'s_ __SieveOfEratosthenes__ algorithm above.
+
 + GetPrimeNumbers(N1, N2)
     * Brute Force algorithm
 
@@ -38,3 +51,7 @@ This includes learning for different types of algorithms.
                 if IsPrime(x):
                     add x to list
             return list
+
+    * Sieve of Eratosthenes algorithm
+    
+        Refer in method _IsPrime(N)'s_ __SieveOfEratosthenes__ algorithm above.
