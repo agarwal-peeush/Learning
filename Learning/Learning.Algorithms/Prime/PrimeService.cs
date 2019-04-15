@@ -4,30 +4,30 @@ using System.Collections.Generic;
 
 namespace Learning.Algorithms.Prime
 {
-    public class PrimeHelper : IPrimeService
+    public class PrimeService : IPrimeService
     {
         private IPrimeService _Inner;
         public PrimeAlgorithmType_Values AlgoType { get; }
 
-        public PrimeHelper(PrimeAlgorithmType_Values algoType)
+        public PrimeService(PrimeAlgorithmType_Values algoType)
         {
             AlgoType = algoType;
-            _Inner = GetPrimeHelper(algoType);
+            _Inner = GetPrimeService(algoType);
         }
-        public PrimeHelper(IPrimeService inner)
+        public PrimeService(IPrimeService inner)
         {
             AlgoType = inner.AlgoType;
             _Inner = inner;
         }
 
-        private IPrimeService GetPrimeHelper(PrimeAlgorithmType_Values algoType)
+        private IPrimeService GetPrimeService(PrimeAlgorithmType_Values algoType)
         {
             switch (algoType)
             {
                 case PrimeAlgorithmType_Values._NotDefined:
                     throw new ArgumentException($"AlgoType cannot be {algoType}.");
                 case PrimeAlgorithmType_Values.BruteForce:
-                    return new BruteForcePrimeHelper();
+                    return new PrimeServiceUsingBruteForce();
                 default:
                     throw new NotImplementedException($"{algoType} is not implemented yet.");
             }

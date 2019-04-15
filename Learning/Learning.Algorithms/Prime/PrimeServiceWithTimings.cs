@@ -3,11 +3,11 @@ using System.Diagnostics;
 
 namespace Learning.Algorithms.Prime
 {
-    public class PrimeHelperWithTimings
+    public class PrimeServiceWithTimings
     {
         private readonly IPrimeService _Inner;
 
-        public PrimeHelperWithTimings(IPrimeService inner)
+        public PrimeServiceWithTimings(IPrimeService inner)
         {
             _Inner = inner;
         }

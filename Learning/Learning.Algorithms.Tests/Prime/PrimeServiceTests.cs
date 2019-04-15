@@ -7,7 +7,7 @@ using System.Collections.Generic;
 namespace Learning.Algorithms.Tests.Prime
 {
     [TestClass]
-    public class PrimeHelperTests
+    public class PrimeServiceTests
     {
         private IPrimeService _Sut;
 
@@ -15,7 +15,7 @@ namespace Learning.Algorithms.Tests.Prime
         [TestMethod]
         public void IsPrime_ShouldReturnFalse_IfNumberLessThanOrEqToZero()
         {
-            _Sut = new PrimeHelper(PrimeAlgorithmType_Values.BruteForce);
+            _Sut = new PrimeService(PrimeAlgorithmType_Values.BruteForce);
 
             bool actual = _Sut.IsPrime(0);
             Assert.IsFalse(actual, "0(zero) is not a prime number");
@@ -27,7 +27,7 @@ namespace Learning.Algorithms.Tests.Prime
         [TestMethod]
         public void IsPrime_ShouldReturnFalse_IfNumberIsOne()
         {
-            _Sut = new PrimeHelper(PrimeAlgorithmType_Values.BruteForce);
+            _Sut = new PrimeService(PrimeAlgorithmType_Values.BruteForce);
 
             bool actual = _Sut.IsPrime(1);
             Assert.IsFalse(actual, "1 is not a prime number");
@@ -36,7 +36,7 @@ namespace Learning.Algorithms.Tests.Prime
         [TestMethod]
         public void IsPrime_ShouldReturnTrue_IfNumberIsTwo()
         {
-            _Sut = new PrimeHelper(PrimeAlgorithmType_Values.BruteForce);
+            _Sut = new PrimeService(PrimeAlgorithmType_Values.BruteForce);
 
             bool actual = _Sut.IsPrime(2);
             Assert.IsTrue(actual, "2 is a prime number");
@@ -45,7 +45,7 @@ namespace Learning.Algorithms.Tests.Prime
         [TestMethod]
         public void IsPrime_ShouldReturnTrue_IfNumberIsThree()
         {
-            _Sut = new PrimeHelper(PrimeAlgorithmType_Values.BruteForce);
+            _Sut = new PrimeService(PrimeAlgorithmType_Values.BruteForce);
 
             bool actual = _Sut.IsPrime(3);
             Assert.IsTrue(actual, "3 is a prime number");
@@ -54,7 +54,7 @@ namespace Learning.Algorithms.Tests.Prime
         [TestMethod]
         public void IsPrime_ShouldReturnFalse_IfNumberIsFour()
         {
-            _Sut = new PrimeHelper(PrimeAlgorithmType_Values.BruteForce);
+            _Sut = new PrimeService(PrimeAlgorithmType_Values.BruteForce);
 
             bool actual = _Sut.IsPrime(4);
             Assert.IsFalse(actual, "4 is not a prime number");
@@ -67,7 +67,7 @@ namespace Learning.Algorithms.Tests.Prime
         [DataRow(13)]
         public void IsPrime_ShouldReturnTrue_IfNumberIsPrime(int number)
         {
-            _Sut = new PrimeHelper(PrimeAlgorithmType_Values.BruteForce);
+            _Sut = new PrimeService(PrimeAlgorithmType_Values.BruteForce);
 
             bool actual = _Sut.IsPrime(number);
             Assert.IsTrue(actual, $"{number} is a prime number");
@@ -76,12 +76,12 @@ namespace Learning.Algorithms.Tests.Prime
         [TestMethod]
         public void IsPrime_ShouldReturnTimings()
         {
-            _Sut = new PrimeHelper(PrimeAlgorithmType_Values.BruteForce);
+            _Sut = new PrimeService(PrimeAlgorithmType_Values.BruteForce);
 
-            PrimeHelperWithTimings timingsHelper = new PrimeHelperWithTimings(_Sut);
+            PrimeServiceWithTimings timingsHelper = new PrimeServiceWithTimings(_Sut);
 
             int number = 212683;
-            PrimeHelperWithTimings.ResultWithTimings<bool> result = timingsHelper.IsPrime(number);
+            PrimeServiceWithTimings.ResultWithTimings<bool> result = timingsHelper.IsPrime(number);
 
             Assert.IsNotNull(result);
             Assert.IsTrue(result.Result, $"{number} is a prime number");
@@ -94,7 +94,7 @@ namespace Learning.Algorithms.Tests.Prime
         [TestMethod]
         public void GetPrimeNumbers_ShouldReturnTwoForInputTwo()
         {
-            _Sut = new PrimeHelper(PrimeAlgorithmType_Values.BruteForce);
+            _Sut = new PrimeService(PrimeAlgorithmType_Values.BruteForce);
             int input = 2;
             List<int> expectedPrimes = new List<int> { 2 };
 
@@ -106,7 +106,7 @@ namespace Learning.Algorithms.Tests.Prime
         [TestMethod]
         public void GetPrimeNumbers_ShouldReturnTwoAndThreeForInputThree()
         {
-            _Sut = new PrimeHelper(PrimeAlgorithmType_Values.BruteForce);
+            _Sut = new PrimeService(PrimeAlgorithmType_Values.BruteForce);
             int input = 3;
             List<int> expectedPrimes = new List<int> { 2, 3 };
 
@@ -118,7 +118,7 @@ namespace Learning.Algorithms.Tests.Prime
         [TestMethod]
         public void GetPrimeNumbers_ShouldReturnAllPrimesForGivenInput()
         {
-            _Sut = new PrimeHelper(PrimeAlgorithmType_Values.BruteForce);
+            _Sut = new PrimeService(PrimeAlgorithmType_Values.BruteForce);
 
             Assert_GetPrimeNumbers_ReturnsExpectedPrimes(4, new List<int> { 2, 3 });
             Assert_GetPrimeNumbers_ReturnsExpectedPrimes(5, new List<int> { 2, 3, 5 });
@@ -143,7 +143,7 @@ namespace Learning.Algorithms.Tests.Prime
         {
             MockPrimeHelper innerPrimeHelper = new MockPrimeHelper();
 
-            _Sut = new PrimeHelper(innerPrimeHelper);
+            _Sut = new PrimeService(innerPrimeHelper);
 
             PrimeAlgorithmType_Values algoType = _Sut.AlgoType;
 
