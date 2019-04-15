@@ -45,6 +45,7 @@
     <Compile Include="Prime\PrimeServiceUsingBruteForce.cs" />
     <Compile Include="Prime\IPrimeService.cs" />
     <Compile Include="Prime\PrimeService.cs" />
+    <Compile Include="Prime\PrimeServiceUsingSieveOfEratosthenes.cs" />
     <Compile Include="Prime\PrimeServiceWithTimings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

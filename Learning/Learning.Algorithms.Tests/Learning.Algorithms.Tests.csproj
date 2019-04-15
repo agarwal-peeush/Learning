@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Prime\MockPrimeService.cs" />
     <Compile Include="Prime\PrimeServiceUsingBruteForceTests.cs" />
+    <Compile Include="Prime\PrimeServiceUsingSieveOfEratosthenesTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

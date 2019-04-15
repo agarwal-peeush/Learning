@@ -28,6 +28,8 @@ namespace Learning.Algorithms.Prime
                     throw new ArgumentException($"AlgoType cannot be {algoType}.");
                 case PrimeAlgorithmType_Values.BruteForce:
                     return new PrimeServiceUsingBruteForce();
+                case PrimeAlgorithmType_Values.SieveOfEratosthenes:
+                    return new PrimeServiceUsingSieveOfEratosthenes();
                 default:
                     throw new NotImplementedException($"{algoType} is not implemented yet.");
             }
