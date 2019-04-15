@@ -1,4 +1,6 @@
-﻿using Learning.Algorithms.Enums;
+﻿using System;
+using System.Collections.Generic;
+using Learning.Algorithms.Enums;
 
 namespace Learning.Algorithms.Prime
 {
@@ -6,6 +8,19 @@ namespace Learning.Algorithms.Prime
     {
         public PrimeAlgorithmType_Values AlgoType
             => PrimeAlgorithmType_Values.BruteForce;
+
+        public List<int> GetPrimeNumbers(int number)
+        {
+            var primes = new List<int>();
+
+            for (int i = 2; i <= number; i++)
+            {
+                if (IsPrime(i))
+                    primes.Add(i);
+            }
+
+            return primes;
+        }
 
         public bool IsPrime(int number)
         {

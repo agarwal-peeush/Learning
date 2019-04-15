@@ -1,5 +1,6 @@
 ﻿using Learning.Algorithms.Enums;
 using System;
+using System.Collections.Generic;
 
 namespace Learning.Algorithms.Prime
 {
@@ -35,6 +36,11 @@ namespace Learning.Algorithms.Prime
         public bool IsPrime(int number)
         {
             return _Inner.IsPrime(number);
+        }
+
+        public List<int> GetPrimeNumbers(int number)
+        {
+            return _Inner.GetPrimeNumbers(number);
         }
     }
 }
