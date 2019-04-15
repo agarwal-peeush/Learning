@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 namespace Learning.Algorithms.Prime
 {
-    public class PrimeHelper : IPrimeHelper
+    public class PrimeHelper : IPrimeService
     {
-        private IPrimeHelper _Inner;
+        private IPrimeService _Inner;
         public PrimeAlgorithmType_Values AlgoType { get; }
 
         public PrimeHelper(PrimeAlgorithmType_Values algoType)
@@ -14,13 +14,13 @@ namespace Learning.Algorithms.Prime
             AlgoType = algoType;
             _Inner = GetPrimeHelper(algoType);
         }
-        public PrimeHelper(IPrimeHelper inner)
+        public PrimeHelper(IPrimeService inner)
         {
             AlgoType = inner.AlgoType;
             _Inner = inner;
         }
 
-        private IPrimeHelper GetPrimeHelper(PrimeAlgorithmType_Values algoType)
+        private IPrimeService GetPrimeHelper(PrimeAlgorithmType_Values algoType)
         {
             switch (algoType)
             {

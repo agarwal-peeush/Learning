@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Learning.Algorithms.Prime
 {
-    public interface IPrimeHelper
+    public interface IPrimeService
     {
         PrimeAlgorithmType_Values AlgoType { get; }
         bool IsPrime(int number);

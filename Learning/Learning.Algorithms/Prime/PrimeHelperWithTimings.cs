@@ -5,9 +5,9 @@ namespace Learning.Algorithms.Prime
 {
     public class PrimeHelperWithTimings
     {
-        private readonly IPrimeHelper _Inner;
+        private readonly IPrimeService _Inner;
 
-        public PrimeHelperWithTimings(IPrimeHelper inner)
+        public PrimeHelperWithTimings(IPrimeService inner)
         {
             _Inner = inner;
         }

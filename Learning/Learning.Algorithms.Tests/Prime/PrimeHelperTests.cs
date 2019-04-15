@@ -9,7 +9,7 @@ namespace Learning.Algorithms.Tests.Prime
     [TestClass]
     public class PrimeHelperTests
     {
-        private IPrimeHelper _Sut;
+        private IPrimeService _Sut;
 
         #region IsPrime
         [TestMethod]
@@ -151,7 +151,7 @@ namespace Learning.Algorithms.Tests.Prime
         }
     }
 
-    internal class MockPrimeHelper : IPrimeHelper
+    internal class MockPrimeHelper : IPrimeService
     {
         public PrimeAlgorithmType_Values AlgoType
             => PrimeAlgorithmType_Values._NotDefined;

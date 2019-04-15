@@ -4,7 +4,7 @@ using Learning.Algorithms.Enums;
 
 namespace Learning.Algorithms.Prime
 {
-    internal class BruteForcePrimeHelper : IPrimeHelper
+    internal class BruteForcePrimeHelper : IPrimeService
     {
         public PrimeAlgorithmType_Values AlgoType
             => PrimeAlgorithmType_Values.BruteForce;
