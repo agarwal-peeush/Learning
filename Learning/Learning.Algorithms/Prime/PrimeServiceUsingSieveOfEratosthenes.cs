@@ -23,7 +23,7 @@ namespace Learning.Algorithms.Prime
 
         public List<int> GetPrimeNumbers(int number)
         {
-            throw new NotImplementedException();
+            return GetPrimeNumbersWithinInput(number);
         }
 
         public List<int> GetPrimeNumbers(int start, int end)
