@@ -50,7 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Prime\MockPrimeService.cs" />
-    <Compile Include="Prime\PrimeServiceTests.cs" />
+    <Compile Include="Prime\PrimeServiceUsingBruteForceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

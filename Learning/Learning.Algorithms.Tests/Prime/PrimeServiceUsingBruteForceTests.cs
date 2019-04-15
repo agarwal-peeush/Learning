@@ -7,7 +7,7 @@ using System.Collections.Generic;
 namespace Learning.Algorithms.Tests.Prime
 {
     [TestClass]
-    public class PrimeServiceTests
+    public class PrimeServiceUsingBruteForceTests
     {
         private IPrimeService _Sut;
 
