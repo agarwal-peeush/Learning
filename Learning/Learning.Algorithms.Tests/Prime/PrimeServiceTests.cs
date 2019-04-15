@@ -239,34 +239,13 @@ namespace Learning.Algorithms.Tests.Prime
         [TestMethod]
         public void InstantiateWithPrimeHelper_ShouldReturnAlgoTypeCorrectly()
         {
-            MockPrimeHelper innerPrimeHelper = new MockPrimeHelper();
+            MockPrimeService innerPrimeHelper = new MockPrimeService();
 
             _Sut = new PrimeService(innerPrimeHelper);
 
             PrimeAlgorithmType_Values algoType = _Sut.AlgoType;
 
             Assert.AreEqual(PrimeAlgorithmType_Values._NotDefined, algoType);
-        }
-    }
-
-    internal class MockPrimeHelper : IPrimeService
-    {
-        public PrimeAlgorithmType_Values AlgoType
-            => PrimeAlgorithmType_Values._NotDefined;
-
-        public List<int> GetPrimeNumbers(int number)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<int> GetPrimeNumbers(int start, int end)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool IsPrime(int number)
-        {
-            return true;
         }
     }
 }
