@@ -1,6 +1,8 @@
 # Learning
 It includes projects, codes for all types of learning using c-sharp. 
 
+[![Build Status](https://dev.azure.com/agarwalpeeush/Learning/_apis/build/status/agarwal-peeush.Learning?branchName=master)](https://dev.azure.com/agarwalpeeush/Learning/_build/latest?definitionId=1&branchName=master)
+
 ## Learning.Algorithms
 This includes learning for different types of algorithms. 
 
