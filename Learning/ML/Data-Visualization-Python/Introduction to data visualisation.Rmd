@@ -127,6 +127,30 @@ ax.set_xlabel('Points')
 ax.set_ylabel('Frequency')
 ```
 
+## Bar chart
+
+A bar chart can be created using `bar` method. The bar chart isn't automatically calculating the frequency of a category so we are going to use pandas `value_counts` function to do this. The bar chart is useful for categorical data that doesn't have a lot of different categories (less than 30) otherwise it gets messy. 
+
+```{python}
+# create a figure and axis
+fig, ax = plt.subplots()
+
+# count the occurrence of each class
+data = wine_reviews['points'].value_counts()
+
+# get x and y data
+points = data.index
+frequency = data.values
+
+# create a bar chart
+ax.bar(points, frequency)
+
+# set title and labels
+ax.set_title('Wine review scores')
+ax.set_xlabel('Points')
+ax.set_ylabel('Frequency')
+```
+
 ```{python}
 
 ```
