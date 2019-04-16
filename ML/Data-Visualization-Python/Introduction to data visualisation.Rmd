@@ -218,6 +218,154 @@ wine_reviews.groupby('country').price.mean().sort_values(ascending=False)[:5].pl
 
 In the example above we grouped the data by country and then took the mean of the wine prices, ordered it, and plotted top 5 countries with the highest average wine price.
 
+
+# Seaborn
+Seaborn is a Python data visualisation library based on Matplotlib. It provides high level interface for creating attractive graphs. 
+It can be imported by typing:
+
+```{python}
+import seaborn as sns
+```
+
+## Scatter plot
+We can use `.scatterplot` method for creating a scatterplot, and just as in Pandas we need to pass it the column names of the x and y data, but now we also need to pass the data as an additional argument because we aren't calling the function on the data directly as we did in Pandas. 
+
+```{python}
+sns.scatterplot(x='sepal_length', y='sepal_width', data=iris)
+```
+
+We can also highlight the points by class using the `hue` argument, which is a lot easier than in Matplotlib
+
+```{python}
+sns.scatterplot(x='sepal_length',y='sepal_width',hue='class',data=iris)
+```
+
+## Line chart
+To create a line chart the `sns.lineplot` method can be used. The only required argument is the data, which in our case are the four numeric columns from the Iris dataset. We could also use the `sns.kdeplot` method which rounds of the edges of the curves and therefore is cleaner if you have a lot of outliers in your dataset
+
+```{python}
+sns.lineplot(data = iris.drop(['class'], axis=1))
+```
+
+## Histogram
+To create a histogram in Seaborn we use the `sns.displot` method. We need to pass it the column we want to plot and it will calculate the occurrences itself. We can also pass it the number of bins, and if we want to plot a gaussian kernel density estimate inside the graph.
+
+```{python}
+sns.distplot(wine_reviews['points'], bins=10, kde=False)
+```
+
+```{python}
+sns.distplot(wine_reviews[('points')], bins=10, kde=True)
+```
+
+## Bar chart
+In Seaborn a bar chart can be created using the `sns.countplot` method and passing it the data. 
+
+```{python}
+sns.countplot(wine_reviews['points'])
+```
+
+## Box plot
+A box plot is a graphical method of displaying the five-number summary. We can create box plots using seaborns `sns.boxplot` method and passing it the data as well as the x and y column name. 
+
+```{python}
+df = wine_reviews[(wine_reviews['points']>=95) & (wine_reviews['price']<=1000)]
+sns.boxplot('points','price',data=df)
+```
+
+Box plots just like bar chart are great for data with only a few categories but can get messy really quickly. 
+
+
+## Heatmap
+A Heatmap is a graphical representation of data where the individual values contained in a matrix are represented as colors. Heatmaps are perfect for exploring the correlation of features in a dataset. 
+
+To get the correlations of the features inside a dataset we can call `<dataset>.corr()`, which is a Pandas dataframe method. This will give us the correlation matrix. 
+
+We can now use either Matplotlib or Seaborn to create the Heatmap
+
+
+### Matplotlib:
+
+```{python}
+import numpy as np
+```
+
+```{python}
+# get correlation matrix
+corr = iris.corr()
+
+fig, ax = plt.subplots()
+
+# create heatmap
+im = ax.imshow(corr.values)
+
+# Set labels
+ax.set_xticks(np.arange(len(corr.columns)))
+ax.set_yticks(np.arange(len(corr.columns)))
+ax.set_xticklabels(corr.columns)
+ax.set_yticklabels(corr.columns)
+
+# Rotate the tick labels and set their alignment
+plt.setp(ax.get_xticklabels(), rotation=45, ha="right", rotation_mode="anchor")
+```
+
+To add annotations to the heatmap, we need to add two for loops
+
+```{python}
+# get correlation matrix
+corr = iris.corr()
+
+fig, ax = plt.subplots()
+
+im = ax.imshow(corr.values)
+
+# Set labels
+ax.set_xticks(np.arange(len(corr.columns)))
+ax.set_yticks(np.arange(len(corr.columns)))
+ax.set_xticklabels(corr.columns)
+ax.set_yticklabels(corr.columns)
+
+# Rotate the tick labels and set their alignment
+plt.setp(ax.get_xticklabels(), rotation=45, ha="right", rotation_mode="anchor")
+
+for i in range(len(corr.columns)):
+    for j in range(len(corr.columns)):
+        text = ax.text(j, i, np.around(corr.iloc[i,j], decimals=2), ha="center", va="center", color="black")
+```
+
+### Seaborn
+Seaborn makes it way easier to create a heatmap and add annotations
+
+```{python}
+sns.heatmap(iris.corr(), annot=True)
+```
+
+## Faceting
+Faceting is the act of breaking data variables up across multiple subplots and combining those subplots into a single figure. 
+
+Faceting is really helpful if you want to quickly explore your dataset. 
+
+To use one kind of Faceting in Seaborn, we can use the `FacetGrid`. First of all, we need to define the `FacetGrid` and pass it our data as well as row or column, which will be used to split the data. Then we need to call the `map` function on our `FacetGrid` object and define the plot type we want to use, as well as the column we want to graph. 
+
+```{python}
+g = sns.FacetGrid(iris, col='class')
+g = g.map(sns.kdeplot, ('sepal_length'))
+```
+
+## Pairplot
+Seaborn's `pairplot` and Pandas `scatter_matrix`, can be used to plot a grid of pairwise relationships in a dataset.
+
+```{python}
+sns.pairplot(iris)
+```
+
+```{python}
+from pandas.plotting import scatter_matrix
+
+fig, ax = plt.subplots(figsize=(12,12))
+scatter_matrix(iris, alpha=1, ax=ax)
+```
+
 ```{python}
 
 ```
