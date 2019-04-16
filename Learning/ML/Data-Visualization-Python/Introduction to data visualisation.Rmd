@@ -12,6 +12,25 @@ jupyter:
     name: python3
 ---
 
+# Importing datasets
+
+
+We will use two datasets which are freely available. The [Iris](https://archive.ics.uci.edu/ml/datasets/iris) and [Wine Reviews](https://www.kaggle.com/zynicide/wine-reviews) dataset, which we can both load in using pandas `read_csv` method.
+
+```{python}
+import pandas as pd
+```
+
+```{python}
+iris = pd.read_csv('Dataset\iris.csv', names=['sepal_length','sepal_width','petal_length','petal_width','class'])
+iris.head()
+```
+
+```{python}
+wine_reviews = pd.read_csv('Dataset\winemag-data-130k-v2.csv', index_col=0)
+wine_reviews.head()
+```
+
 ```{python}
 
 ```
