@@ -151,6 +151,73 @@ ax.set_xlabel('Points')
 ax.set_ylabel('Frequency')
 ```
 
+# Pandas visualisation
+
+Pandas Visualisation makes it easy to create plots out of a pandas dataframe and series. It also has a higher level API than Matplotlib and therefore we need less code for the same results. 
+
+
+## Scatter plot
+
+To create a scatter plot in Pandas, we can call `<dataframe>.plot.scatter()` and pass it two arguments, the name of x-column as well as the name of y-column. Optionally, we can also pass it ia title. 
+
+```{python}
+iris.plot.scatter(x='sepal_length', y='sepal_width', title='Iris Dataset')
+```
+
+As we can see in the graph, it is automatically setting the x and y label to the column names. 
+
+
+## Line chart
+To create line chart in Pandas we can call `<dataframe>.plot.line()`. Whilst in Matplotlib, we needed to loop-through each column we wanted to plot, in Pandas we don't need to do this because it automatically plot all available numeric columns. 
+
+```{python}
+iris.drop(['class'], axis=1).plot.line(title='Iris dataset')
+```
+
+If we have more than one feature, Pandas automatically creates a legend for us, as can be seen in the image above.
+
+
+## Histogram
+In Pandas, we can create Histogram with the `plot.hist` method. There aren't any required arguments but we can optionally pass some like the bin size. 
+
+```{python}
+wine_reviews['points'].plot.hist()
+```
+
+It's also easy to plot multiple histograms.
+
+```{python}
+iris['sepal_length'].plot.hist(bins=20)
+```
+
+```{python}
+iris.plot.hist(subplots=True, layout=(2,2), figsize=(10,10), bins=20)
+```
+
+The `subplots` argument specifies that we want separate plot for each feature and `layout` specifies the number of plots per row and column.
+
+
+## Bar chart
+To plot a bar chart we use `plot.bar()` method, but before we can call this we need to get the data. For this, we will first count the occurrences using `value_counts()` method and then sort in ascending order using `sort_index()` method.  
+
+```{python}
+wine_reviews['points'].value_counts().sort_index().plot.bar()
+```
+
+It's also really easy to plot horizontal bar chart using `plot.barh()` method. 
+
+```{python}
+wine_reviews['points'].value_counts().sort_index().plot.barh()
+```
+
+We can also plot other data then the number of occurrences. 
+
+```{python}
+wine_reviews.groupby('country').price.mean().sort_values(ascending=False)[:5].plot.bar()
+```
+
+In the example above we grouped the data by country and then took the mean of the wine prices, ordered it, and plotted top 5 countries with the highest average wine price.
+
 ```{python}
 
 ```
