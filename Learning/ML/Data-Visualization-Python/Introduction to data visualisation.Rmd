@@ -31,6 +31,102 @@ wine_reviews = pd.read_csv('Dataset\winemag-data-130k-v2.csv', index_col=0)
 wine_reviews.head()
 ```
 
+# Matplotlib
+
+
+Matplotlib is the most popular python plotting library. It is a low-level library with a Matlab like interface which offers lots of freedom at the cost of having to write more code. 
+
+To install Matplotlib pip and conda can be used. 
+
+```
+pip install matplotlib
+or
+conda install matplotlib
+```
+
+Matplotlib is good for creating basic graphs like line charts, bar charts, histograms and many more. It can be imported by typing:
+
+```{python}
+import matplotlib.pyplot as plt
+```
+
+## Scatter plot
+
+To create a scatter plot in Matplotlib we can use the `scatter` method. We will also create a figure and an axis using `plt.subplots` so we can give our plot a title and labels. 
+
+```{python}
+# create a figure and axis
+fig, ax = plt.subplots()
+
+# scatter the sepal_length against the sepal_width
+ax.scatter(iris['sepal_length'],iris['sepal_width'])
+
+# set title and labels
+ax.set_title('Iris Dataset')
+ax.set_xlabel('Sepal Length')
+ax.set_ylabel('Sepal Width')
+```
+
+We can give the graph more meaning by coloring each point by its class. This can be done by creating a dictionary which maps from class to color and then scattering each point on its own using for-loop and passing respective color. 
+
+```{python}
+# create color dictionary
+colors = {'Iris-setosa':'r', 'Iris-versicolor':'g', 'Iris-virginica':'b'}
+
+# create figure and axis
+fig, ax = plt.subplots()
+
+# plot each data point
+for i in range(len(iris['sepal_length'])):
+    ax.scatter(iris['sepal_length'][i], iris['sepal_width'][i], color=colors[iris['class'][i]])
+
+# set title and labels
+ax.set_title('Iris Dataset')
+ax.set_xlabel('Sepal Length')
+ax.set_ylabel('Sepal Width')
+```
+
+## Line chart
+
+In Matplotlib we can create a line chart by calling the `plot` method. We can also plot multiple columns in one graph, by looping through the columns we want and plotting each column on the same axis. 
+
+```{python}
+# get columns to plot
+columns = iris.columns.drop(['class'])
+
+# create x data
+print('Iris shape:', iris.shape)
+x_data = range(0, iris.shape[0])
+
+# create figure and axis
+fig, ax = plt.subplots()
+
+# plot each column
+for column in columns:
+    ax.plot(x_data, iris[column])
+
+# set title and legend
+ax.set_title('Iris Dataset')
+ax.legend()
+```
+
+## Histogram
+
+In Matplotlib we can create a Histogram using the `hist` method. If we pass it categorical data like the points column from the wine-review dataset it will automatically calculate how often each class occurs
+
+```{python}
+# create figure and axis
+fig, ax = plt.subplots()
+
+# plot histogram
+ax.hist(wine_reviews['points'])
+
+# set title and labels
+ax.set_title('Wine Review Scores')
+ax.set_xlabel('Points')
+ax.set_ylabel('Frequency')
+```
+
 ```{python}
 
 ```
