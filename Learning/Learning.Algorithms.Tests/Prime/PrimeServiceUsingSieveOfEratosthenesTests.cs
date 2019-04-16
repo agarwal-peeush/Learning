@@ -85,7 +85,7 @@ namespace Learning.Algorithms.Tests.Prime
 
             Assert.IsNotNull(result);
             Assert.IsTrue(result.Result, $"{number} is a prime number");
-            Assert.IsTrue(result.TotalTimeElapsed <= TimeSpan.FromMilliseconds(30)); //Slower than SieveOfEratosthenes
+            Assert.IsTrue(result.TotalTimeElapsed <= TimeSpan.FromSeconds(1)); //Slower than SieveOfEratosthenes
         }
 
         #endregion
