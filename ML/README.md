@@ -3,3 +3,53 @@ It includes Python notebooks related to MachineLearning.
 
 ## Data-Visualization-Python
 This includes Python notebooks related to Data visualization using Python libraries. 
+
+## Mathematics for ML
+We should already know concepts of:
+
++  Permutation
++  Combination
++  Conditional Probability
+
+### Random variable
+These are assigned as outcomes in terms of numbers of a Random process. 
+
+### Discrete Probability Distributions
+#### The Bernoulli Distribution
+These conditions should hold true for applying Bernoulli's Distribution:
+
++ A single trial
++ The trial can result in one of two possible outcomes, labelled success and failure
++ P(Success) = p
++ P(Failure) = 1 - p
+
+Let `X = 1` if a success occurs, and `X = 0` if a failure occurs. 
+Then X(Random Variable) has a Bernoulli distribution:
+```
+    P(X = x) = (p^<sup>x</sup>)(1-p)^<sup>1-x</sup>
+```
+
+#### Example
+The probability distribution of a discrete random variable X:
+
+| x | 0 | 1 | 2 |
+| :---: | :---: | :---: | :---: |
+| p(x) | 0.16 | 0.48 | 0.36 |
+
+The **expected value** of a random variable is the theoretical mean of the random variable. 
+
+To calculate the expected value for a discrete random variable X:
+
+        E(X) = &sum;xp(x) , for all x
+
+Expectation of a function g(X):
+
+        E[g(X)] = &sum;g(x)p(x) , for all x
+
+Variance(&sigma;) of X:
+
+        E[(X - &mu;)^2] = &sum;{(x-&mu;)^2}p(x) , for all x
+
+        E[(X - &mu;)^2] = E(X^2) - [E(X)]^2
+                 &sigma;^2 = E(X^2) - &mu;^2
+
