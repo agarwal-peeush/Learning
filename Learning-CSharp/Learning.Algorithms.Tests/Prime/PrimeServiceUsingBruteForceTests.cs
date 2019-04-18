@@ -73,20 +73,20 @@ namespace Learning.Algorithms.Tests.Prime
             Assert.IsTrue(actual, $"{number} is a prime number");
         }
 
-        [TestMethod]
-        public void IsPrime_ShouldReturnTimings()
-        {
-            _Sut = new PrimeService(PrimeAlgorithmType_Values.BruteForce);
+        //[TestMethod]
+        //public void IsPrime_ShouldReturnTimings()
+        //{
+        //    _Sut = new PrimeService(PrimeAlgorithmType_Values.BruteForce);
 
-            PrimeServiceWithTimings timingsHelper = new PrimeServiceWithTimings(_Sut);
+        //    PrimeServiceWithTimings timingsHelper = new PrimeServiceWithTimings(_Sut);
 
-            int number = 212683;
-            PrimeServiceWithTimings.ResultWithTimings<bool> result = timingsHelper.IsPrime(number);
+        //    int number = 212683;
+        //    PrimeServiceWithTimings.ResultWithTimings<bool> result = timingsHelper.IsPrime(number);
 
-            Assert.IsNotNull(result);
-            Assert.IsTrue(result.Result, $"{number} is a prime number");
-            Assert.IsTrue(result.TotalTimeElapsed <= TimeSpan.FromMilliseconds(0.9));
-        }
+        //    Assert.IsNotNull(result);
+        //    Assert.IsTrue(result.Result, $"{number} is a prime number");
+        //    Assert.IsTrue(result.TotalTimeElapsed <= TimeSpan.FromMilliseconds(0.9));
+        //}
 
         #endregion
 
