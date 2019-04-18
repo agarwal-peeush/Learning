@@ -25,9 +25,10 @@ These conditions should hold true for applying Bernoulli's Distribution:
 
 Let `X = 1` if a success occurs, and `X = 0` if a failure occurs. 
 Then X(Random Variable) has a Bernoulli distribution:
-```
-    P(X = x) = (p^<sup>x</sup>)(1-p)^<sup>1-x</sup>
-```
+
+<code>
+    P(X = x) = (p<sup>x</sup>)(1-p)<sup>1-x</sup>
+</code>
 
 #### Example
 The probability distribution of a discrete random variable X:
@@ -40,16 +41,24 @@ The **expected value** of a random variable is the theoretical mean of the rando
 
 To calculate the expected value for a discrete random variable X:
 
-        E(X) = &sum;xp(x) , for all x
+<code>
+    E(X) = &sum;x*p(x) , for all x
+</code>
 
 Expectation of a function g(X):
 
-        E[g(X)] = &sum;g(x)p(x) , for all x
+<code>
+    E[g(X)] = &sum;g(x)*p(x) , for all x
+</code>
 
 Variance(&sigma;) of X:
 
-        E[(X - &mu;)^2] = &sum;{(x-&mu;)^2}p(x) , for all x
-
-        E[(X - &mu;)^2] = E(X^2) - [E(X)]^2
-                 &sigma;^2 = E(X^2) - &mu;^2
-
+<code>
+    E[(X - &mu;)<sup>2</sup>] = &sum;(x-&mu;)<sup>2</sup>p(x) , for all x
+</code>
+<code>
+    E[(X - &mu;)<sup>2</sup>] = E(X<sup>2</sup>) - [E(X)]<sup>2</sup>
+</code>
+<code>
+    &sigma;<sup>2</sup> = E(X<sup>2</sup>) - &mu;<sup>2</sup>
+</code>
