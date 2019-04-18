@@ -41,21 +41,21 @@ The **expected value** of a random variable is the theoretical mean of the rando
 
 To calculate the expected value for a discrete random variable X:
 
-<pre><code>
-    E(X) = &sum;x*p(x) , for all x
-</code></pre>
+<pre>
+<code>E(X) = &sum;x*p(x) , for all x</code>
+</pre>
 
 Expectation of a function g(X):
 
-<pre><code>
-    E[g(X)] = &sum;g(x)*p(x) , for all x
-</code></pre>
+<pre>
+<code>E[g(X)] = &sum;g(x)*p(x) , for all x</code>
+</pre>
 
 Variance(&sigma;) of X:
 
-<pre><code>
-    E[(X - &mu;)<sup>2</sup>] = &sum;(x-&mu;)<sup>2</sup>p(x) , for all x
-    E[(X - &mu;)<sup>2</sup>] = E(X<sup>2</sup>) - [E(X)]<sup>2</sup>
-    &sigma;<sup>2</sup> = E(X<sup>2</sup>) - &mu;<sup>2</sup>
-</code></pre>
+<pre>
+<code>E[(X - &mu;)<sup>2</sup>] = &sum;(x-&mu;)<sup>2</sup>p(x) , for all x
+E[(X - &mu;)<sup>2</sup>] = E(X<sup>2</sup>) - [E(X)]<sup>2</sup>
+&sigma;<sup>2</sup> = E(X<sup>2</sup>) - &mu;<sup>2</sup></code>
+</pre>
 
