@@ -2,10 +2,10 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/Learning/.vs/Learning/v15
+/Learning-CSharp/.vs/Learning/v15
 /.vs
-/Learning/packages
-/Learning/*/bin/Debug
-/Learning/*/obj/Debug
+/Learning-CSharp/packages
+/Learning-CSharp/*/bin/Debug
+/Learning-CSharp/*/obj/Debug
 /Learning/*/*.csproj.user
 /ML/*/.ipynb_checkpoints/*
