@@ -26,9 +26,9 @@ These conditions should hold true for applying Bernoulli's Distribution:
 Let `X = 1` if a success occurs, and `X = 0` if a failure occurs. 
 Then X(Random Variable) has a Bernoulli distribution:
 
-<pre><code>
-    P(X = x) = (p<sup>x</sup>)(1-p)<sup>1-x</sup>
-</code></pre>
+<pre>
+<code>P(X = x) = (p<sup>x</sup>)(1-p)<sup>1-x</sup></code>
+</pre>
 
 #### Example
 The probability distribution of a discrete random variable X:
