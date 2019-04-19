@@ -50,6 +50,9 @@
     <Compile Include="BridgePattern\Manuscript.cs" />
     <Compile Include="BuilderPattern\MySandwichBuilder.cs" />
     <Compile Include="BuilderPattern\Sandwich.cs" />
+    <Compile Include="BuilderPattern\SandwichBuilder.cs" />
+    <Compile Include="BuilderPattern\SandwichMaker.cs" />
+    <Compile Include="BuilderPattern\ClubSandwichBuilder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BridgePattern\StandardFormatter.cs" />

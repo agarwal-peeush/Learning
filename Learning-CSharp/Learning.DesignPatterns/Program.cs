@@ -73,9 +73,22 @@ namespace Learning.DesignPatterns
             //sandwich.Display();
 
             //    Solution to Problem 2 and 3: Create SandwichBuilder which creates an object of Sandwich and method to return created object. 
-            var builder = new MySandwichBuilder();
-            builder.CreateSandwich();
-            var sandwich = builder.GetSandwich();
+            //Problem 4: If we introduce new Builder, it doesn't know steps to build a sandwich. 
+            //var builder = new MySandwichBuilder();
+            //builder.CreateSandwich();
+            //var sandwich = builder.GetSandwich();
+            //sandwich.Display();
+
+            //      Solution to Problem 4: Create SandwichMaker which handles the process/steps of building a Sandwich. It uses the builder passed to build a Sandwich
+            var maker = new SandwichMaker(new MySandwichBuilder());
+            maker.BuildSandwich();
+            var sandwich = maker.GetSandwich();
+            sandwich.Display();
+
+
+            maker = new SandwichMaker(new ClubSandwichBuilder());
+            maker.BuildSandwich();
+            sandwich = maker.GetSandwich();
             sandwich.Display();
 
         }
