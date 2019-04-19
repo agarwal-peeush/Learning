@@ -93,3 +93,30 @@ This design pattern separates the construction of a complex object from its repr
 + Product
     * What is being built
     * Not a different type, but different data
+
+### Chain of responsibility Pattern
+
+![Traditional Usage](Readme.Images/ChainOfResponsibility_TraditionalUsage.jpg)
+
+#### Traits
++ Sender is aware of only one receiver
++ Each receiver is only aware of the next receiver
++ Receivers process the message or send it down the chain
++ The sender does not know who received the message
++ The first receiver to handle the message terminates the chain
++ The order of the receiver list matters
+
+#### Use the Chain of Responsibility when...
++ More than one message handler for a message
++ The appropriate handler is not explicitly known by the sender
++ The set of handlers can be dynamically defined
+
+#### Benefits of the Chain of Responsibility
++ Reduced coupling
++ Dynamically manage the message handlers
++ End of chain behavior can be defined appropriately
+
+#### Related patterns
++ Composite
++ Tree of responsibility
+
