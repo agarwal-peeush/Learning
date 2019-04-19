@@ -48,6 +48,7 @@
     <Compile Include="BridgePattern\FAQ.cs" />
     <Compile Include="BridgePattern\IFormatter.cs" />
     <Compile Include="BridgePattern\Manuscript.cs" />
+    <Compile Include="BuilderPattern\MySandwichBuilder.cs" />
     <Compile Include="BuilderPattern\Sandwich.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -60,17 +60,24 @@ namespace Learning.DesignPatterns
             //    Solution to Problem 1: Convert ctor variables to Properties to reduce parameters in Sandwich ctor. 
             //Problem 2: Now, after converting to properties, we have to remember each property to set
             //Problem 3: We have lost the Order at which Properties needs to be set. 
-            var sandwich = new Sandwich()
-            {
-                BreadType = BreadType.Wheat,
-                IsToasted = false,
-                CheeseType = CheeseType.American,
-                MeatType = MeatType.Turkey,
-                HasMayo = false,
-                HasMustard = false,
-                Vegetables = new List<string> { "Tomato" },
-            };
+            //var sandwich = new Sandwich()
+            //{
+            //    BreadType = BreadType.Wheat,
+            //    IsToasted = false,
+            //    CheeseType = CheeseType.American,
+            //    MeatType = MeatType.Turkey,
+            //    HasMayo = false,
+            //    HasMustard = false,
+            //    Vegetables = new List<string> { "Tomato" },
+            //};
+            //sandwich.Display();
+
+            //    Solution to Problem 2 and 3: Create SandwichBuilder which creates an object of Sandwich and method to return created object. 
+            var builder = new MySandwichBuilder();
+            builder.CreateSandwich();
+            var sandwich = builder.GetSandwich();
             sandwich.Display();
+
         }
     }
 }
