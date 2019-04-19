@@ -57,3 +57,13 @@ This includes learning for different types of algorithms.
     * Sieve of Eratosthenes algorithm
     
         Refer in method _IsPrime(N)'s_ __SieveOfEratosthenes__ algorithm above.
+
+
+
+## Learning.DesignPatterns
+This includes learning for different design patterns. 
+
+### Builder pattern
+
+#### Overview
+This design pattern separates the construction of a complex object from its representation so that the same construction process can create different representations. 
