@@ -67,3 +67,29 @@ This includes learning for different design patterns.
 
 #### Overview
 This design pattern separates the construction of a complex object from its representation so that the same construction process can create different representations. 
+
+#### Problems that builder pattern solves
+
++ Too many parameters in constructor
++ Order dependent, sets the process or steps to be followed to achieve final product
++ Different constructions, enables to pass different types of builder to get final product differently.
+
+#### Roles
+
+![The Builder Pattern roles](Readme.Images/TheBuilderPattern.jpg)
+
++ Director
+    * Uses the **Concreate Builder**
+    * Knows how to build
+    * Client code calls directly
++ Builder
+    * Abstract interface or class
+    * Defines steps
+    * Holds instance of **Product**
++ Concrete Builder
+    * Should be more than one of these
+    * Provides an implementation for interface defined by the **Builder**
+    * A recipe
++ Product
+    * What is being built
+    * Not a different type, but different data
