@@ -1,4 +1,5 @@
 ﻿using Learning.DesignPatterns.BridgePattern;
+using Learning.DesignPatterns.BuilderPattern;
 using System;
 using System.Collections.Generic;
 
@@ -8,7 +9,8 @@ namespace Learning.DesignPatterns
     {
         private static void Main(string[] args)
         {
-            DemoBridgePattern();
+            //DemoBridgePattern();
+            DemoBuilderPattern();
 
             Console.ReadKey();
         }
@@ -48,6 +50,14 @@ namespace Learning.DesignPatterns
             {
                 doc.Print();
             }
+        }
+
+        private static void DemoBuilderPattern()
+        {
+            //Problem 1: Complex Sandwich ctor and it can grow long and long
+            //    Solution: Convert ctor variables to Properties to reduce parameters in Sandwich ctor. 
+            new Sandwich(BreadType.Wheat, false, CheeseType.American, MeatType.Turkey, false, false, new List<string> { "Tomato" }).Display();
+
         }
     }
 }
