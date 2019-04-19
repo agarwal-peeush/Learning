@@ -55,9 +55,22 @@ namespace Learning.DesignPatterns
         private static void DemoBuilderPattern()
         {
             //Problem 1: Complex Sandwich ctor and it can grow long and long
-            //    Solution: Convert ctor variables to Properties to reduce parameters in Sandwich ctor. 
-            new Sandwich(BreadType.Wheat, false, CheeseType.American, MeatType.Turkey, false, false, new List<string> { "Tomato" }).Display();
+            //new Sandwich_Original(BreadType.Wheat, false, CheeseType.American, MeatType.Turkey, false, false, new List<string> { "Tomato" }).Display();
 
+            //    Solution to Problem 1: Convert ctor variables to Properties to reduce parameters in Sandwich ctor. 
+            //Problem 2: Now, after converting to properties, we have to remember each property to set
+            //Problem 3: We have lost the Order at which Properties needs to be set. 
+            var sandwich = new Sandwich()
+            {
+                BreadType = BreadType.Wheat,
+                IsToasted = false,
+                CheeseType = CheeseType.American,
+                MeatType = MeatType.Turkey,
+                HasMayo = false,
+                HasMustard = false,
+                Vegetables = new List<string> { "Tomato" },
+            };
+            sandwich.Display();
         }
     }
 }
