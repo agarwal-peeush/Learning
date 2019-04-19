@@ -41,7 +41,7 @@ This includes learning for different types of algorithms.
 
     * Sieve of Eratosthenes algorithm
         
-        Refer in method _IsPrime(N)'s_ __SieveOfEratosthenes__ algorithm above.
+        Refer in method [_IsPrime(N)'s_ __SieveOfEratosthenes__ algorithm](#methods) above.
 
 + GetPrimeNumbers(N1, N2)
     * Brute Force algorithm
@@ -56,7 +56,7 @@ This includes learning for different types of algorithms.
 
     * Sieve of Eratosthenes algorithm
     
-        Refer in method _IsPrime(N)'s_ __SieveOfEratosthenes__ algorithm above.
+        Refer in method [_IsPrime(N)'s_ __SieveOfEratosthenes__ algorithm](#methods) above.
 
 
 
