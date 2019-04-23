@@ -67,22 +67,22 @@ The probability distribution of a discrete random variable X:
 *1. Expectation value of X or Mean of X*  
 <pre>
 <code>E(X) = &sum;x*p(x), for all values of x
-     = 0\*0.016 + 1\*0.48 + 2\*0.36
+     = 0*0.016 + 1*0.48 + 2*0.36
      = 1.2</code>
 </pre>
 E(X) is the theoretical mean(<code>&mu;</code>) of X.  
 
 *2. Expectation value of <code>X<sup>2</sup></code>*     
 <pre>
-<code>E(X<sup>2</sup>) = &sum;x<sup>2</sup>\*p(x), for all values of x
-      = 0<sup>2</sup>\*0.16 + 1<sup>2</sup>\*0.48 + 2<sup>2</sup>\*0.36
+<code>E(X<sup>2</sup>) = &sum;x<sup>2</sup>*p(x), for all values of x
+      = 0<sup>2</sup>*0.16 + 1<sup>2</sup>*0.48 + 2<sup>2</sup>*0.36
       = 1.92</code>
 </pre>
 
 *3. Variance of X, <code>&sigma;<sup>2</sup></code>*     
 <pre>
-<code>E[(X - &mu;)<sup>2</sup>] = &sum;(x-&mu;)<sup>2</sup>\*p(x), for all values of x
-            = (0 - 1.2)<sup>2</sup>\*0.16 + (1 - 1.2)<sup>2</sup>\*0.48 + (2 - 1.2)<sup>2</sup>\*0.36
+<code>E[(X - &mu;)<sup>2</sup>] = &sum;(x-&mu;)<sup>2</sup>*p(x), for all values of x
+            = (0 - 1.2)<sup>2</sup>*0.16 + (1 - 1.2)<sup>2</sup>*0.48 + (2 - 1.2)<sup>2</sup>*0.36
             = 0.48</code>
 </pre>
 
@@ -104,14 +104,15 @@ This [Cheatsheet on Probability](https://www.sas.upenn.edu/~astocker/lab/teachin
 
 *Null Hypothesis*
 
-<code>&mu;<sub>obese</sub> = &mu;<sub>average</sub>
+<code>&mu;<sub>obese</sub> = &mu;<sub>average</sub></code>
 
 *Alternate Hypothesis*
 
-+ <code>&mu;<sub>obese</sub> = &mu;<sub>average</sub>
++ Null hypothesis: 
+    * <code>&mu;<sub>obese</sub> = &mu;<sub>average</sub></code>
 + Alternatives:
-    * <code>&mu;<sub>obese</sub> < &mu;<sub>average</sub>
-    * <code>&mu;<sub>obese</sub> \> &mu;<sub>average</sub>
+    * <code>&mu;<sub>obese</sub> < &mu;<sub>average</sub></code>
+    * <code>&mu;<sub>obese</sub> \> &mu;<sub>average</sub></code>
 
 Researchers Hope to Reject the Null Hypothesis
 
