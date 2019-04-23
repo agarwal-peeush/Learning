@@ -93,3 +93,30 @@ We could also use following relationship to calculate *Variance of X*:
 </code></pre>
 
 This [Cheatsheet on Probability](https://www.sas.upenn.edu/~astocker/lab/teaching-files/PSYC739-2016/probability_cheatsheet.pdf) provides a comprehensive reference material for probability & statistics. Developed by the University of Pennsylvania. 
+
+### Statistics
+#### Inferential-Hypotheses Testing
+*What is the Probability?*
+
++ It is the probability of an outcome given a state of nature.
++ It is not the probability of a state of nature.
++ Possible states of nature are called **Hypotheses** in statistics.
+
+*Null Hypothesis*
+
+<code>&mu;<sub>obese</sub> = &mu;<sub>average</sub>
+
+*Alternate Hypothesis*
+
++ <code>&mu;<sub>obese</sub> = &mu;<sub>average</sub>
++ Alternatives:
+    * <code>&mu;<sub>obese</sub> < &mu;<sub>average</sub>
+    * <code>&mu;<sub>obese</sub> \> &mu;<sub>average</sub>
+
+Researchers Hope to Reject the Null Hypothesis
+
++ The null hypothesis is the opposite of the researcher's hypothesis
++ Researcher hopes to reject the null hypothesis to support his or her hypothesis
+
+#### T-Test (Student's test)
+**To be added later**
