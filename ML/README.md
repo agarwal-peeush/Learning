@@ -1,8 +1,8 @@
 # ML (Machine Learning)
-It includes Python notebooks related to MachineLearning. 
+It includes Python notebooks related to MachineLearning.
 
 ## Data-Visualization-Python
-This includes Python notebooks related to Data visualization using Python libraries. 
+This includes Python notebooks related to Data visualization using Python libraries.
 
 ## Mathematics for ML
 We should already know concepts of:
@@ -12,7 +12,7 @@ We should already know concepts of:
 +  Conditional Probability
 
 ### Random variable
-These are assigned as outcomes in terms of numbers of a Random process. 
+These are assigned as outcomes in terms of numbers of a Random process.
 
 ### Discrete Probability Distributions
 #### The Bernoulli Distribution
@@ -23,14 +23,14 @@ These conditions should hold true for applying Bernoulli's Distribution:
 + P(Success) = p
 + P(Failure) = 1 - p
 
-Let `X = 1` if a success occurs, and `X = 0` if a failure occurs. 
+Let `X = 1` if a success occurs, and `X = 0` if a failure occurs.
 Then X(Random Variable) has a Bernoulli distribution:
 
 <pre>
 <code>P(X = x) = (p<sup>x</sup>)(1-p)<sup>1-x</sup></code>
 </pre>
 
-The **expected value** of a random variable is the theoretical mean of the random variable. 
+The **expected value** of a random variable is the theoretical mean of the random variable.
 
 To calculate the expected value for a discrete random variable X:
 
@@ -44,7 +44,7 @@ Expectation of a function g(X):
 <code>E[g(X)] = &sum;g(x)*p(x) , for all x</code>
 </pre>
 
-Variance(&sigma;) of X:
+Variance(&sigma;<sup>2</sup>) of X:
 
 <pre>
 <code>E[(X - &mu;)<sup>2</sup>] = &sum;(x-&mu;)<sup>2</sup>p(x) , for all x
@@ -55,8 +55,8 @@ E[(X - &mu;)<sup>2</sup>] = E(X<sup>2</sup>) - [E(X)]<sup>2</sup>
 #### Example
 Suppose 60% of American adults approve of the way the president is handling his job.  
 Randomly sample 2 American adults.   
-Let X represent the number that approve. 
-So X can take values of 0, 1 or 2. 
+Let X represent the number that approve.
+So X can take values of 0, 1 or 2.
 
 The probability distribution of a discrete random variable X:
 
@@ -92,7 +92,7 @@ We could also use following relationship to calculate *Variance of X*:
             = 0.48
 </code></pre>
 
-This [Cheatsheet on Probability](https://www.sas.upenn.edu/~astocker/lab/teaching-files/PSYC739-2016/probability_cheatsheet.pdf) provides a comprehensive reference material for probability & statistics. Developed by the University of Pennsylvania. 
+This [Cheatsheet on Probability](https://www.sas.upenn.edu/~astocker/lab/teaching-files/PSYC739-2016/probability_cheatsheet.pdf) provides a comprehensive reference material for probability & statistics. Developed by the University of Pennsylvania.
 
 ### Statistics
 #### Inferential-Hypotheses Testing
@@ -108,7 +108,7 @@ This [Cheatsheet on Probability](https://www.sas.upenn.edu/~astocker/lab/teachin
 
 *Alternate Hypothesis*
 
-+ Null hypothesis: 
++ Null hypothesis:
     * <code>&mu;<sub>obese</sub> = &mu;<sub>average</sub></code>
 + Alternatives:
     * <code>&mu;<sub>obese</sub> < &mu;<sub>average</sub></code>
@@ -121,3 +121,5 @@ Researchers Hope to Reject the Null Hypothesis
 
 #### T-Test (Student's test)
 **To be added later**
+
+[Cheatsheet for Statistics](http://web.mit.edu/~csvoss/Public/usabo/stats_handout.pdf)
