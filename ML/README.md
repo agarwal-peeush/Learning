@@ -190,7 +190,7 @@ Bi-variate analysis finds out the relationship between two variables. Here, we l
       ![Z-Test Calculation2](Readme.Images/EDA_BiVariate_Z-Test_Calculation2.jpg)
   * **ANOVA**:- It assesses whether the average of more than two groups is statistically different.
 + **Continuous & Continuous**: While doing bi-variate analysis between two continuous variables, we should look at scatter plot. The pattern of scatter plot indicates the relationship between variables. The relationship can be linear or non-linear.  
-![Scatter plot indicating relationships between 2 variables](Readme.Images/EDA_BiVariate_ScatterPlot_RelationshipIndicators.jpg)
+![Scatter plot indicating relationships between 2 variables](Readme.Images/EDA_BiVariate_ScatterPlot_RelationshipIndicators.jpg)    
 Scatter plot shows the relationship between two variables but doesn't indicates the strength of relationship amongst them. To find the strength of the relationship, we use **Correlation**.  
 Correlation varies between -1 and +1.   
   * -1: Perfect negative linear correlation
