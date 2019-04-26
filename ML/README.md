@@ -167,3 +167,34 @@ At this stage, we explore variables one by one. Method to perform uni-variate an
 
 **Categorical Variables**:- For categorical variables, we'll use frequency table to understand distribution of each category. We can also read as percentage of values under each category. It can be be measured using two metrics, **Count** and **Count%** against each category. **Bar chart** can be used as visualization.
 
+##### 3. Bi-variate Analysis
+Bi-variate analysis finds out the relationship between two variables. Here, we look for association and disassociation between variables at a pre-defined significance level. We can perform bi-variate analysis for any combination of categorical and continuous variables. The combinations are: 
+
++ **Categorical & Categorical**: To find the relationship between two categorical variables, we can use following methods:
+  * **Two-way table**: We can start analyzing the relationship by creating a two-way table of count and count%. The rows represents the category of one variable and the columns represent the categories of the other variable. We show count or count% of observations available in each combination of row and column categories. 
+  * **Stacked Column Chart**: This method is more of a visual form of Two-way table.  
+  ![Stacked Column Chart](Readme.Images/EDA_BiVariate_StackedColumnChart.jpg)
+  * **Chi-Square Test**: This test is used to derive the statistical significance of relationship between the variables. Chi-square is based on the difference between the expected and observed frequencies in one or more categories in the two-way table. It returns probability for the computed chi-square distribution with the degree of freedom. Also, it tests whether the evidence in the sample is strong enough to generalize that the relationship for a larger population as well.
+      + *Probability of 0*: It indicates that both categorical variable are dependent.
+      + *Probability of 1*: It shows that both variables are independent.
+      + *Probability &lt; 0.05*: It indicates that the relationship between the variables is significant at 95% confidence. The chi-square test statistic for a test of independence of two categorical variables is found by:    
+      <code>X<sup>2</sup> = &sum;(O - E)<sup>2</sup> / E</code>, where O reprepsents Observer frequency and E is the expected frequency under the null hypothesis and computed by: ![](Readme.Images/EDA_BiVariate_ChiSquaredTest_Calculation.jpg) Statistical measures used to analyze the power of relationship are:
+          - Cramer's V for Nominal Categorical Variable
+          - Mantel-Haenszed Chi-Square for ordinal categorical variable.
+
++ **Categorical & Continuous**: While exploring between categorical and continuous variables, we can draw box plots for each level of categorical variables. If levels are small in number, it will not show the statistical significance. To look at the statistical significance we can perform Z-test, T-test or ANOVA.
+  * **Z-Test/T-Test**:-Either test assess whether mean of two groups are statistically different from each other or not.    
+  ![Z-Test Calculation](Readme.Images/EDA_BiVariate_Z-Test_Calculation.jpg)
+
+      If the probability of Z is small then the difference of two averages is more significant. The T-test is very similar to Z-test but it is used when number of observation for both categories is less than 30.     
+      ![Z-Test Calculation2](Readme.Images/EDA_BiVariate_Z-Test_Calculation2.jpg)
+  * **ANOVA**:- It assesses whether the average of more than two groups is statistically different.
++ **Continuous & Continuous**: While doing bi-variate analysis between two continuous variables, we should look at scatter plot. The pattern of scatter plot indicates the relationship between variables. The relationship can be linear or non-linear.  
+![Scatter plot indicating relationships between 2 variables](Readme.Images/EDA_BiVariate_ScatterPlot_RelationshipIndicators.jpg)
+Scatter plot shows the relationship between two variables but doesn't indicates the strength of relationship amongst them. To find the strength of the relationship, we use **Correlation**.  
+Correlation varies between -1 and +1.   
+  * -1: Perfect negative linear correlation
+  * +1: Perfect positive linear correlation, and
+  * 0: No Correlation    
+Correlation can be derived using following formula:   
+`Correlation = Covariance(X,Y) / SQRT(Var(X) * Var(Y))`
