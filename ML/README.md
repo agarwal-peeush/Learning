@@ -156,12 +156,12 @@ Suppose, we want to predict, whether the students will  play cricket or not(refe
 
 Below, the variables have been defined in different category:
 
-![Variable identification](Readme.Images\EDA_Variable_Identification.jpg)
+![Variable identification](Readme.Images/EDA_Variable_Identification.jpg)
 
 ##### 2. Univariate Analysis
 At this stage, we explore variables one by one. Method to perform uni-variate analysis will depend on whether the variable type is categorical or continuous. Let's look at these methods and statistical measures for categorical and continuous variables individually:   
 **Continuous Variables**:- In case of continuous variables, we need to understand the central tendency and spread of the variable. These are measured using various statistical metrics visualization methods as shown below:
-![Continuous variables analysis](Readme.Images\EDA_ContinuousVariable_Analysis.jpg)
+![Continuous variables analysis](Readme.Images/EDA_ContinuousVariable_Analysis.jpg)
 
 *Note: Univariate Analysis is also used to highlight missing and outlier values.*
 
