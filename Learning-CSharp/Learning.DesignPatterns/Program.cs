@@ -1,5 +1,6 @@
 ﻿using Learning.DesignPatterns.BridgePattern;
 using Learning.DesignPatterns.BuilderPattern;
+using Learning.DesignPatterns.ChainOfResponsibilityPattern;
 using System;
 using System.Collections.Generic;
 
@@ -10,7 +11,8 @@ namespace Learning.DesignPatterns
         private static void Main(string[] args)
         {
             //DemoBridgePattern();
-            DemoBuilderPattern();
+            //DemoBuilderPattern();
+            DemoChainOfResponsibilityPattern();
 
             Console.ReadKey();
         }
@@ -91,6 +93,41 @@ namespace Learning.DesignPatterns
             sandwich = maker.GetSandwich();
             sandwich.Display();
 
+        }
+
+        private static void DemoChainOfResponsibilityPattern()
+        {
+            var employees = new List<Employee>
+            {
+                new Employee("William Worker", decimal.Zero),
+                new Employee("Mary Manager", 1000),
+                new Employee("Victor VicePres", 5000),
+                new Employee("Paula President", 20000),
+            };
+
+            decimal expenseReportAmount;
+            while(ConsoleInput.TryReadDecimal("Expense report amount:", out expenseReportAmount))
+            {
+                IExpenseReport expense = new ExpenseReport(expenseReportAmount);
+
+                bool expenseProcessed = false;
+
+                foreach (var approver in employees)
+                {
+                    var response = approver.ApproveResponse(expense);
+                    if(response != ApprovalResponse.BeyondApprovalLimit)
+                    {
+                        Console.WriteLine($"The request was {response}.");
+                        expenseProcessed = true;
+                        break;
+                    }
+                }
+
+                if (!expenseProcessed)
+                {
+                    Console.WriteLine("No one was able to approve your expense.");
+                }
+            }
         }
     }
 }
