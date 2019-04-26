@@ -21,6 +21,12 @@ namespace Learning.DesignPatterns.ChainOfResponsibilityPattern
         ApprovalResponse ApproveResponse(IExpenseReport expenseReport);
     }
 
+    public interface IExpenseHandler
+    {
+        ApprovalResponse Approve(IExpenseReport expenseReport);
+        void RegisterNext(IExpenseHandler next);
+    }
+
     public enum ApprovalResponse
     {
         Denied, 
