@@ -198,3 +198,22 @@ Correlation varies between -1 and +1.
   * 0: No Correlation    
 Correlation can be derived using following formula:   
 `Correlation = Covariance(X,Y) / SQRT(Var(X) * Var(Y))`
+
+##### 4. Missing value treatment
+**Why missing value treatment is required?**    
+Missing data in the training data set can reduce the power/fit of a model or can lead to a biased model because we have not analysed the behavior and relationship with other variables correctly. It can lead to wrong prediction or classification.   
+![Why missing value treatment](Readme.Images/EDA_MIssingValueTreatment_Why.jpg)   
+Notice the missing values in the image shown above: In the left scenario, we have not treated missing values. The inference from this data set is that the chances of playing cricket by males is higher than females. On the other hand, if you look at the second table, which shows data after treatment of missing values (based on gender), we can see that females have higher chances of playing cricket compared to males.
+
+**Why my data has missing values?**   
+We looked at the importance of treatment of missing values in a dataset. Now, let's identify the reasons for occurrence of these missing values. They may occur at two stages:
+
++ Data Extraction
++ Data collection
+  * Missing completely at random
+  * Missing at random
+  * Missing that depends on unobserved predictors
+  * Missing that depends on the missing value itself
+  
+
+
