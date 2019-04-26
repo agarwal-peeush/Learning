@@ -6,7 +6,7 @@ namespace Learning.DesignPatterns
     {
         internal static bool TryReadDecimal(string v, out decimal expenseReportAmount)
         {
-            expenseReportAmount = default;
+            expenseReportAmount = decimal.Zero;
 
             Console.Write(v);
             var input = Console.ReadLine().Trim();
