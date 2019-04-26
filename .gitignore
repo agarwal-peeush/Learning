@@ -2,7 +2,7 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/Learning-CSharp/.vs/Learning/v15
+/Learning-CSharp/.vs/Learning/*
 /.vs
 /Learning-CSharp/packages
 /Learning-CSharp/*/bin/Debug
