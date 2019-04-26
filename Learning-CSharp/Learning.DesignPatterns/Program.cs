@@ -1,5 +1,6 @@
 ﻿using Learning.DesignPatterns.BridgePattern;
 using Learning.DesignPatterns.BuilderPattern;
+using Learning.DesignPatterns.ChainOfResponsibilityPattern;
 using System;
 using System.Collections.Generic;
 
@@ -10,7 +11,8 @@ namespace Learning.DesignPatterns
         private static void Main(string[] args)
         {
             //DemoBridgePattern();
-            DemoBuilderPattern();
+            //DemoBuilderPattern();
+            DemoChainOfResponsibilityPattern();
 
             Console.ReadKey();
         }
@@ -91,6 +93,68 @@ namespace Learning.DesignPatterns
             sandwich = maker.GetSandwich();
             sandwich.Display();
 
+        }
+
+        private static void DemoChainOfResponsibilityPattern()
+        {
+            #region Problem of Logic to handle expenseReport is captured at wrong level.
+            /* Caller is responsible for iterating over the list. 
+             * This means, business logic of how expenseReport is promoted in Management chain is captured at the wrong level.
+             * I should not be worried about getting approval of my expense report in Management chain. My manager should do it for me. 
+             * With the Chain of Responsibility pattern, we'll able to achieve the abstraction required behind the scenes. 
+             */
+            //var employees = new List<Employee>
+            //{
+            //    new Employee("William Worker", decimal.Zero),
+            //    new Employee("Mary Manager", 1000),
+            //    new Employee("Victor VicePres", 5000),
+            //    new Employee("Paula President", 20000),
+            //};
+
+            //decimal expenseReportAmount;
+            //while(ConsoleInput.TryReadDecimal("Expense report amount:", out expenseReportAmount))
+            //{
+            //    IExpenseReport expense = new ExpenseReport(expenseReportAmount);
+
+            //    bool expenseProcessed = false;
+
+            //    foreach (var approver in employees)
+            //    {
+            //        var response = approver.ApproveResponse(expense);
+            //        if (response != ApprovalResponse.BeyondApprovalLimit)
+            //        {
+            //            Console.WriteLine($"The request was {response}.");
+            //            expenseProcessed = true;
+            //            break;
+            //        }
+            //    }
+
+            //    if (!expenseProcessed)
+            //    {
+            //        Console.WriteLine("No one was able to approve your expense.");
+            //    }
+            //}
+            #endregion
+
+            #region Solution through Chain of Responsibility pattern
+            var william = new ExpenseHandler(new Employee("William Worker", decimal.Zero));
+            var mary = new ExpenseHandler(new Employee("Mary Manager", 1000));
+            var victor = new ExpenseHandler(new Employee("Victor VicePres", 5000));
+            var paula = new ExpenseHandler(new Employee("Paula President", 20000));
+
+            william.RegisterNext(mary);
+            mary.RegisterNext(victor);
+            victor.RegisterNext(paula);
+
+            decimal expenseReportAmount;
+            while (ConsoleInput.TryReadDecimal("Expense report amount:", out expenseReportAmount))
+            {
+                IExpenseReport expense = new ExpenseReport(expenseReportAmount);
+
+                var response = william.Approve(expense);
+                Console.WriteLine($"The request was {response}.");
+            }
+            #endregion
         }
     }
 }
