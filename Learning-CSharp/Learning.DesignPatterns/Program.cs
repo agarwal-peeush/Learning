@@ -110,12 +110,18 @@ namespace Learning.DesignPatterns
             {
                 IExpenseReport expense = new ExpenseReport(expenseReportAmount);
 
+                #region Problem of Logic to handle expenseReport is captured at wrong level.
+                /* Caller is responsible for iterating over the list. 
+                 * This means, business logic of how expenseReport is promoted in Management chain is captured at the wrong level.
+                 * I should not be worried about getting approval of my expense report in Management chain. My manager should do it for me. 
+                 * With the Chain of Responsibility pattern, we'll able to achieve the abstraction required behind the scenes. 
+                 */
                 bool expenseProcessed = false;
 
                 foreach (var approver in employees)
                 {
                     var response = approver.ApproveResponse(expense);
-                    if(response != ApprovalResponse.BeyondApprovalLimit)
+                    if (response != ApprovalResponse.BeyondApprovalLimit)
                     {
                         Console.WriteLine($"The request was {response}.");
                         expenseProcessed = true;
@@ -126,7 +132,8 @@ namespace Learning.DesignPatterns
                 if (!expenseProcessed)
                 {
                     Console.WriteLine("No one was able to approve your expense.");
-                }
+                } 
+                #endregion
             }
         }
     }
