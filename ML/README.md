@@ -214,6 +214,27 @@ We looked at the importance of treatment of missing values in a dataset. Now, le
   * Missing at random
   * Missing that depends on unobserved predictors
   * Missing that depends on the missing value itself
-  
 
+**Which are the methods to treat missing values?**
+
++ **Deletion:** It is of two types: *List Wise Deletion* and *Pair Wise Deletion*.
+  * List wise deletion: We delete observations where any of the variable is misisng. Pros - *Simplicity*. Cons - *Reduces power of model because of smaller sample size*.
+  * Pair wise deletion: We perform analysis with all cases in which the variables of interest are present. Pros - *Keeps all cases available for analysis*. Cons - *Uses different sample size for different variables*.
+  ![EDA MissingValuesTreatment](Readme.Images/EDA_MissingValuesTreatment.jpg)
+  * Deletion methods are used when the nature of misisng data is "**Missing completely at random**" else non random missing values can bias model output.
++ **Mean/Mode/Meadian imputation:** Imputation is a method to fill in the missing values with estimated ones. It consists of replacing the missing data for a given attribute by the mean or median (quantitative attribute) or mode (qualitative attribute) of all known values of that variable. It can be of two types:
+  * **Generalized Imputation:** In this case, we calculate the mean or median for all non missing values of that variable then replace missing value with mean or median. 
+  * **Similar case Imputation:** In this case, we calculate average for gender "Male" (29.75) and "Female" (25) individually of non missing values then replace the missing value based on gender. 
++ **Prediction Model:** We create a predictive model to estimate values that will substitute the missing data. We can use regression, ANOVA, Logistic regression and various modeling technique to perform this. There are 2 drawbacks for this approach:
+  * The model estimated values are usually more well-behaved than the true values
+  * If there are no relationships with attributes in the data set and the attribute with missing values, then the model will not be precise for estimating missing values.
++ **KNN Imputation:** In this method of imputation, the missing values of an attribute are imputed using the given number of attributes that are most similar to the attribute whose values are missing. The similarity of two attributes is determined using a distance function. It is also known to have certain advantage & disadvantages.
+  * Advantages:
+    - K-nearest neighbour can predict both qualitatitve and quantitaive attributes.
+    - Creation of predictive model for each attribute with missing data is not required
+    - Attributes with multiple missing values can be easily treated
+    - Correlation structure of the data is taken into consideration
+  * Disadvantages:
+    - KNN algorithm is very time-consuming in analyzing large database. It searches through all the dataset looking for the most similar instances.
+    - Choice of k-value is very critical. Higher value of k would include attributes which are significantly different from what we need whereas lower value of k implies missing out of significant attributes.
 
