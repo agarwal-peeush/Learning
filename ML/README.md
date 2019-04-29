@@ -248,7 +248,7 @@ Outlier is an observation that appears far away and diverges from an overall pat
 Outlier can be of 2 types: **Univariate**e and **Multivariate**. 
 
 + **Univariate outlier:** These outliers can be found when we look at distribution of a single variable. 
-+ **Multivariate outlier:** These outliers are in n-dimensional space. 
++ **Multivariate outlier:** These outliers are in n-dimensional space. For more information on Multivariate analysis, refer [here](https://python-for-multivariate-analysis.readthedocs.io/)
 
 ###### What causes Outliers?
 Whenever we come across outliers, the ideal way to tackle them is to find out the reason of having these outliers. The method to deal with them would then depend on the reason of their occurrence. Causes of outliers can be classified in two broad categories:
@@ -347,4 +347,4 @@ There are various techniques to create new features. Let’s look at the some of
 + **Creating dummy variables:** One of the most common application of dummy variable is to convert categorical variable into numerical variables. Dummy variables are also called *Indicator Variables*. It is useful to take categorical variable as a predictor in statistical models.  Categorical variable can take values 0 and 1. Let's take a variable 'gender'. We can produce two variables, namely, “Var_Male” with values 1 (Male) and 0 (No male) and “Var_Female” with values 1 (Female) and 0 (No Female). We can also create dummy variables for more than two classes of a categorical variables with n or n-1 dummy variables.   
 ![EDA Feature Generation Dummy variables](Readme.Images/EDA_FeatureGeneration_2.jpg)
 
-
+[Cheatsheet for data exploration](https://www.analyticsvidhya.com/blog/2015/06/infographic-cheat-sheet-data-exploration-python/)
