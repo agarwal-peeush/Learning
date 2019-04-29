@@ -339,12 +339,12 @@ There are various methods used to transform variables. As discussed, some of the
 **What is Feature / Variable Creation & its Benefits?**
 
 *Feature/Variable creation* is a process to generate a new variables / features based on existing variable(s). For example, say, we have date(dd-mm-yy) as an input variable in a data set. We can generate new variables like day, month, year, week, weekday that may have better relationship with target variable. This step is used to highlight the hidden relationship in a variable:    
-![EDA Feature Generation](Readme.Images/EDA_FeatureGeneration_1.JPG)
+![EDA Feature Generation](Readme.Images/EDA_FeatureGeneration_1.jpg)
 
 There are various techniques to create new features. Let’s look at the some of the commonly used methods:
 
 + **Creating derived variables:** This refers to creating new variables from existing variable(s) using set of functions or different methods. Let’s look at it through “Titanic - Kaggle competition”. In this data set, variable age has missing values. To predict missing values, we used the salutation (Master, Mr, Miss, Mrs) of name as a new variable. How do we decide which variable to create? Honestly, this depends on business understanding of the analyst, his curiosity and the set of hypothesis he might have about the problem. Methods such as taking log of variables, binning variables and other methods of variable transformation can also be used to create new variables.
 + **Creating dummy variables:** One of the most common application of dummy variable is to convert categorical variable into numerical variables. Dummy variables are also called *Indicator Variables*. It is useful to take categorical variable as a predictor in statistical models.  Categorical variable can take values 0 and 1. Let's take a variable 'gender'. We can produce two variables, namely, “Var_Male” with values 1 (Male) and 0 (No male) and “Var_Female” with values 1 (Female) and 0 (No Female). We can also create dummy variables for more than two classes of a categorical variables with n or n-1 dummy variables.   
-![EDA Feature Generation Dummy variables](Readme.Images/EDA_FeatureGeneration_2.JPG)
+![EDA Feature Generation Dummy variables](Readme.Images/EDA_FeatureGeneration_2.jpg)
 
 
