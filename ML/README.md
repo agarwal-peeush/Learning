@@ -266,3 +266,35 @@ Let's understand various types of outliers in more detail:
 + Sampling error
 + Natural outlier
 
+###### What is the impact of outliers on a dataset?
+There are numerous unfavourable impacts of outliers in the data set:
+
++ It increases the error variance and reduces the power of statistical tests
++ If the outliers are non-randomly distributed, they can decrease normality
++ They can bias or influence estimates that may be of substantive interest
++ They can also impact the basic assumption of Regression, ANOVA and other statistical model assumptions.
+
+To understand the impact deeply, let's take an example to check what happens to a data set with and without outliers in the data set. **Example:**
+![EDA Outliers Impact](Readme.Images/EDA_Outliers_Impact.jpg)
+As you can see, data set with outliers has significantly different mean and standard deviation. In the first scenario, we will say that average is 5.45. But with the outlier, average soars to 30. This would change the estimate completely.
+
+###### How to detect outliers?
+We use visualization methods like **Box plot, Scatter plot, Histogram**. Some analysts use thumbrules to detect outliers. Some of them are:
+
++ Any value, which is beyond the range of -1.5 x IQR to 1.5 x IQR
++ Use capping methods. Any value which out of range of 5th and 95th percentile can be considered as outlier
++ Data points, three or more standard deviation away from mean are considered outlier
++ Outlier detection is merely a special case of the examination of data for influential data points and it also depends on the business understanding
++ Bivariate and multivariate outliers are typically measured using either an index of influence or leverage, or distance. Popular indices such as Mahalanobis’ distance and Cook’s D are frequently used to detect outliers.
++ In SAS, we can use PROC Univariate, PROC SGPLOT. To identify outliers and influential observation, we also look at statistical measure like STUDENT, COOKD, RSTUDENT and others.
+
+###### How to remove outliers?
+Most of the ways to deal with outliers are similar to the methods of missing values like deleting observations, transforming them, binning them, treat them as a separate group, imputing values and other statistical methods. Here, we will discuss the common techniques used to deal with outliers:
+
++ **Deleting observations: ** We delete outlier values if it is due to data entry error, data processing error or outlier observations are very small in numbers. We can also use trimming at both ends to remove outliers.
++ **Transforming and binning values: ** Transforming variables can also eliminate outliers. Natural log of a value reduces the variation caused by extreme values. Binning is also a form of variable transformation. Decision Tree algorithm allows to deal with outliers well due to binning of variable. We can also use the process of assigning weights to different observations.
+![EDA outliers transformation](EDA_Outliers_Transformation.jpg)
++ **Imputing:** We can use mean, median, mode imputation methods. Before imputing values, we should analyse if it is natural outlier or artificial. If it is artificial, we can go with imputing values. We can also use statistical model to predict values of outlier observation and after that we can impute it with predicted values.
++ **Treat separably:** If there are significant number of outliers, we should treat them separately in the statistical model. One of the approach is to treat both groups as two different groups and build individual model for both groups and then combine the output.
+
+Till here, we have learnt about steps of data exploration, missing value treatment and techniques of outlier detection and treatment. These 3 stages will make your raw data better in terms of information availability and accuracy. Let's now proceed to the final stage of data exploration. It is Feature Engineering.  
