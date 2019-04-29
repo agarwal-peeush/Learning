@@ -238,3 +238,31 @@ We looked at the importance of treatment of missing values in a dataset. Now, le
     - KNN algorithm is very time-consuming in analyzing large database. It searches through all the dataset looking for the most similar instances.
     - Choice of k-value is very critical. Higher value of k would include attributes which are significantly different from what we need whereas lower value of k implies missing out of significant attributes.
 
+After dealing with missing values, the next task is to deal with outliers. Often, we tend to neglect outliers while building models. This is a discouraging practice. Outliers tend to make your data skewed and reduces accuracy.
+
+##### 5. Outlier detection and treatment
+###### What is an outlier?
+Outlier is an observation that appears far away and diverges from an overall pattern in a sample. 
+
+###### What are the types of outlier?
+Outlier can be of 2 types: **Univariate**e and **Multivariate**. 
+
++ **Univariate outlier:** These outliers can be found when we look at distribution of a single variable. 
++ **Multivariate outlier:** These outliers are in n-dimensional space. 
+
+###### What causes Outliers?
+Whenever we come across outliers, the ideal way to tackle them is to find out the reason of having these outliers. The method to deal with them would then depend on the reason of their occurrence. Causes of outliers can be classified in two broad categories:
+
++ Artifical (Error) / Non-natural
++ Natural
+
+Let's understand various types of outliers in more detail:
+
++ Data entry errors
++ Measurement error
++ Experimental error
++ Intentional Outlier
++ Data processing error
++ Sampling error
++ Natural outlier
+
