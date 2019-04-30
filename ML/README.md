@@ -348,3 +348,78 @@ There are various techniques to create new features. Let’s look at the some of
 ![EDA Feature Generation Dummy variables](Readme.Images/EDA_FeatureGeneration_2.jpg)
 
 [Cheatsheet for data exploration](https://www.analyticsvidhya.com/blog/2015/06/infographic-cheat-sheet-data-exploration-python/)
+
+### Linear Algebra
+#### Matrix
+**Matrix** is a way of writing similar things together to handle and manipulate them as per our requirements easily. In Data Science, it is generally used to store information like weights in an Artificial Neural Network while training various algorithms.
+
+Technically, a matrix is a 2-D array of numbers (as far as Data Science is concerned). For example look at the matrix A below:
+
+##### Terms related to matrix
++ **Order of matrix**: If a matrix has 3 rows and 4 columns, order of the matrix is 3*4 i.e. row*column.
++ **Square matrix**: The matrix in which the number of rows is equal to the number of columns.
++ **Diagonal matrix**: A matrix with all the non-diagonal elements equal to 0 is called a diagonal matrix.
++ **Upper triangular matrix**: Square matrix with all the elements below diagonal equal to 0.
++ **Lower triangular matrix**: Square matrix with all the elements above the diagonal equal to 0.
++ **Scalar matrix**: Square matrix with all the diagonal elements equal to some constant k.
++ **Identity matrix**: Square matrix with all the diagonal elements equal to 1 and all the non-diagonal elements equal to 0.
++ **Column matrix**:  The matrix which consists of only 1 column. Sometimes, it is used to represent a vector.
++ **Row matrix**:  A matrix consisting only of row.
++ **Trace**: It is the sum of all the diagonal elements of a square matrix.
+
+#### Basic operations in matrix
++ Addition    
+  Suppose we have 2 matrices ‘A’ and ‘B’ and the resultant matrix after the addition is ‘C’. Then:
+  <code>C<sub>ij</sub> = A<sub>ij</sub> + B<sub>ij</sub></code>
++ Scalar multiplication   
+  Multiplication of a matrix with a scalar constant is called *scalar multiplication*. Multiply each element of the matrix with the given constant. Suppose we have a constant scalar ‘c’ and a matrix ‘A’. Then multiplying ‘c’ with ‘A’ gives:
+  <code>c[A<sub>ij</sub>] =  [c*A<sub>ij</sub>]</code>
++ Transposition   
+  Transposition simply means interchanging the row and column index. For example:
+  <code>A<sub>ij</sub><sup>T</sup>= A<sub>ji</sub></code>
+  Transpose is used in vectorized implementation of linear and logistic regression.
+
+``` python
+import numpy as np 
+import pandas as pd
+# Create a 3*3 matrix 
+A= np.arange(21,30).reshape(3,3)
+#print the matrix A
+array([[21, 22, 23], [24, 25, 26], [27, 28, 29]])
+# Take the transpose
+A.transpose()
+array([[21, 24, 27], [22, 25, 28], [23, 26, 29]])
+```
+
++ Matrix multiplication     
+  Matrix multiplication is one of the most frequently used operations in linear algebra. We will learn to multiply two matrices as well as go through its important properties.
+
+  Before landing to algorithms, there are a few points to be kept in mind:
+  * The multiplication of two matrices of orders i*j and j*k results into a matrix of order i*k.  Just keep the outer indices in order to get the indices of the final matrix.
+  * Two matrices will be compatible for multiplication only if the number of columns of the first matrix and the number of rows of the second one are same.
+  * The third point is that order of multiplication matters.
+
+``` python
+import numpy as np
+A=np.arange(21,30).reshape(3,3) 
+B=np.arange(31,40).reshape(3,3)
+A.dot(B)
+AB= array([[2250, 2316, 2382], [2556, 2631, 2706], [2862, 2946, 3030]]) 
+B.dot(A)
+BA= array([[2310, 2406, 2502], [2526, 2631, 2736], [2742, 2856, 2970]])
+```
+
+Properties of matrix multiplication
+
+Matrix multiplication is associative provided the given matrices are compatible for multiplication i.e.
+ABC =  (AB)C = A(BC)
+
+import numpy as np A=np.arange(21,30).reshape(3,3) B=np.arange(31,40).reshape(3,3) C=np.arange(41,50).reshape(3,3)
+temp1=(A.dot(B)).dot(C)
+array([[306108, 313056, 320004],       [347742, 355635, 363528],       [389376, 398214, 407052]])
+temp2=A.dot((B.dot(C)))
+
+array([[306108, 313056, 320004],       [347742, 355635, 363528],       [389376, 398214, 407052]])
+2. Matrix multiplication is not commutative i.e. AB and  BA are not equal. We have verified this result above.
+
+Matrix multiplication is used in linear and logistic regression when we calculate the value of output variable by parameterized vector method. As we have learned the basics of matrices, it’s time to apply them.
