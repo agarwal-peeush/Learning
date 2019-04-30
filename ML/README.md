@@ -409,17 +409,20 @@ B.dot(A)
 BA= array([[2310, 2406, 2502], [2526, 2631, 2736], [2742, 2856, 2970]])
 ```
 
-Properties of matrix multiplication
-
-Matrix multiplication is associative provided the given matrices are compatible for multiplication i.e.
-ABC =  (AB)C = A(BC)
-
-import numpy as np A=np.arange(21,30).reshape(3,3) B=np.arange(31,40).reshape(3,3) C=np.arange(41,50).reshape(3,3)
+  Properties of matrix multiplication:
+  * Matrix multiplication is associative provided the given matrices are compatible for multiplication i.e.
+    ABC = (AB)C = A(BC)
+``` python
+import numpy as np 
+A=np.arange(21,30).reshape(3,3) 
+B=np.arange(31,40).reshape(3,3) 
+C=np.arange(41,50).reshape(3,3)
 temp1=(A.dot(B)).dot(C)
-array([[306108, 313056, 320004],       [347742, 355635, 363528],       [389376, 398214, 407052]])
+array([[306108, 313056, 320004], [347742, 355635, 363528], [389376, 398214, 407052]])
 temp2=A.dot((B.dot(C)))
-
-array([[306108, 313056, 320004],       [347742, 355635, 363528],       [389376, 398214, 407052]])
-2. Matrix multiplication is not commutative i.e. AB and  BA are not equal. We have verified this result above.
-
-Matrix multiplication is used in linear and logistic regression when we calculate the value of output variable by parameterized vector method. As we have learned the basics of matrices, it’s time to apply them.
+array([[306108, 313056, 320004], [347742, 355635, 363528], [389376, 398214, 407052]])
+```
+  
+  * Matrix multiplication is not commutative i.e. AB and  BA are not equal. 
+  
+  Matrix multiplication is used in linear and logistic regression when we calculate the value of output variable by parameterized vector method.
