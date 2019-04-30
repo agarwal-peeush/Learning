@@ -426,3 +426,5 @@ array([[306108, 313056, 320004], [347742, 355635, 363528], [389376, 398214, 4070
   * Matrix multiplication is not commutative i.e. AB and  BA are not equal. 
   
   Matrix multiplication is used in linear and logistic regression when we calculate the value of output variable by parameterized vector method.
+
+[Linear Algebra course on Khan Academy](https://www.khanacademy.org/math/linear-algebra)
