@@ -127,6 +127,10 @@ Researchers Hope to Reject the Null Hypothesis
 ### Exploratory Data Analysis (EDA)
 #### Introduction
 There are no shortcuts for data exploration. If you are in a state of mind, that ML can sail you away from every data storm, trust me, it won't. After some point of time, you'll realize that you are struggling at improving model's accuracy. In such situation, data exploration techniques will come to your rescue.
+#### Hypothesis generation
+##### What is hypothesis generation?
+This is a very important stage in DataScience/ML pipeline. It involves understanding the problem in detail by brainstorming as many factors as possible which can impact the outcome. It is done by understanding the problem statement thoroughly and before looking at the data. 
+
 #### Steps of Data Exploration and Preparation
 Remember the quality of your inputs decide the quality of your output. So, once you have got your business hypothesis ready, it makes sense to spend lot of time and efforts here. In general, data exploration, cleaning and preparation can take up to 70% of your total project time.    
 Below are the steps involved to understand, clean and prepare your data for building your predictive model:
