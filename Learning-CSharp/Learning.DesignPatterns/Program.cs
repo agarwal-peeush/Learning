@@ -1,6 +1,7 @@
 ﻿using Learning.DesignPatterns.BridgePattern;
 using Learning.DesignPatterns.BuilderPattern;
 using Learning.DesignPatterns.ChainOfResponsibilityPattern;
+using Learning.DesignPatterns.CommandPattern;
 using System;
 using System.Collections.Generic;
 
@@ -12,7 +13,8 @@ namespace Learning.DesignPatterns
         {
             //DemoBridgePattern();
             //DemoBuilderPattern();
-            DemoChainOfResponsibilityPattern();
+            //DemoChainOfResponsibilityPattern();
+            DemoCommandPattern(args);
 
             Console.ReadKey();
         }
@@ -154,6 +156,13 @@ namespace Learning.DesignPatterns
                 var response = william.Approve(expense);
                 Console.WriteLine($"The request was {response}.");
             }
+            #endregion
+        }
+
+        private static void DemoCommandPattern(string[] args)
+        {
+            #region Logic without CommandPattern
+            Program1.Run(args);
             #endregion
         }
     }

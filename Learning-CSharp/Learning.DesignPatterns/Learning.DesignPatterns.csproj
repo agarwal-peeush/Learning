@@ -57,6 +57,8 @@
     <Compile Include="ChainOfResponsibilityPattern\EndOfChainExpenseHandler.cs" />
     <Compile Include="ChainOfResponsibilityPattern\ExpenseReport.cs" />
     <Compile Include="ChainOfResponsibilityPattern\Interfaces.cs" />
+    <Compile Include="CommandPattern\CommandExecutor.cs" />
+    <Compile Include="CommandPattern\Program1.cs" />
     <Compile Include="ConsoleInput.cs" />
     <Compile Include="ChainOfResponsibilityPattern\ExpenseHandler.cs" />
     <Compile Include="Program.cs" />
