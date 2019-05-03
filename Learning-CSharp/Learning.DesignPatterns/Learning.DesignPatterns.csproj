@@ -68,6 +68,7 @@
     <Compile Include="CommandPattern\Program1.cs" />
     <Compile Include="CommandPattern\Program2.cs" />
     <Compile Include="CompositePattern\Group.cs" />
+    <Compile Include="CompositePattern\IParty.cs" />
     <Compile Include="CompositePattern\Person.cs" />
     <Compile Include="ConsoleInput.cs" />
     <Compile Include="ChainOfResponsibilityPattern\ExpenseHandler.cs" />
