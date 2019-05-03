@@ -79,7 +79,7 @@ This design pattern separates the construction of a complex object from its repr
 ![The Builder Pattern roles](Readme.Images/TheBuilderPattern.jpg)
 
 + Director
-    * Uses the **Concreate Builder**
+    * Uses the **Concrete Builder**
     * Knows how to build
     * Client code calls directly
 + Builder
