@@ -162,7 +162,11 @@ namespace Learning.DesignPatterns
         private static void DemoCommandPattern(string[] args)
         {
             #region Logic without CommandPattern
-            Program1.Run(args);
+            //Program1.Run(args);
+            #endregion
+
+            #region Logic following CommandPattern
+            Program2.Run(args);
             #endregion
         }
     }
