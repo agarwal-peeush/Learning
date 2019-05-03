@@ -5,8 +5,9 @@
 /Learning-CSharp/.vs/Learning/*
 /.vs
 /Learning-CSharp/packages
-/Learning-CSharp/*/bin/Debug
-/Learning-CSharp/*/obj/Debug
+/Learning-CSharp/*/bin/*
+/Learning-CSharp/*/obj/*
 /Learning/*/*.csproj.user
 /ML/*/.ipynb_checkpoints/*
 /ML/*/*.rmd
+/Learning-CSharp/Learning.DesignPatterns/Learning.DesignPatterns.csproj.user

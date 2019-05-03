@@ -57,6 +57,16 @@
     <Compile Include="ChainOfResponsibilityPattern\EndOfChainExpenseHandler.cs" />
     <Compile Include="ChainOfResponsibilityPattern\ExpenseReport.cs" />
     <Compile Include="ChainOfResponsibilityPattern\Interfaces.cs" />
+    <Compile Include="CommandPattern\CommandExecutor.cs" />
+    <Compile Include="CommandPattern\CommandParser.cs" />
+    <Compile Include="CommandPattern\Commands\CreateOrderCommand.cs" />
+    <Compile Include="CommandPattern\Commands\ICommand.cs" />
+    <Compile Include="CommandPattern\Commands\ICommandFactory.cs" />
+    <Compile Include="CommandPattern\Commands\NotFoundCommand.cs" />
+    <Compile Include="CommandPattern\Commands\ShipOrderCommand.cs" />
+    <Compile Include="CommandPattern\Commands\UpdateOrderCommand.cs" />
+    <Compile Include="CommandPattern\Program1.cs" />
+    <Compile Include="CommandPattern\Program2.cs" />
     <Compile Include="ConsoleInput.cs" />
     <Compile Include="ChainOfResponsibilityPattern\ExpenseHandler.cs" />
     <Compile Include="Program.cs" />
