@@ -149,3 +149,14 @@ This design pattern separates the construction of a complex object from its repr
   + The client doesn't pass in any arguments
 + Easy to add new commands
   + Just add a new class (open/closed principal)
+
+#### Related patterns
++ Factory pattern
+  + Factories are often useful to construct command objects
++ Null object
+  + Often times returning a "Null command" can be useful instead of returning null
++ Composite
+  + A Composite command can be useful
+  + Construct it with several "child" commands
+  + Execute() on the composite will call Execute() on the child commands
+
