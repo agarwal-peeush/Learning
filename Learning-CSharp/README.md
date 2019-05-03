@@ -160,3 +160,16 @@ This design pattern separates the construction of a complex object from its repr
   + Construct it with several "child" commands
   + Execute() on the composite will call Execute() on the child commands
 
+### Composite Pattern
+#### Breaking it down
++ Compose objects into tree structures to represent part-whole hierarchies. Composite lets clients treat individual objects and composition of objects uniformly. 
+
+![Composite pattern](Readme.Images/CompositePattern.jpg)
+
+#### When to use?
+If we have in logic:
++ Groups or collections
++ Trees
++ Distribution
++ Can we add an interface?
+
