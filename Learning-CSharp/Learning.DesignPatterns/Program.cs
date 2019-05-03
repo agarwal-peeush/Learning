@@ -220,7 +220,10 @@ namespace Learning.DesignPatterns
             var emily = new Person { Name = "Emily" };
             var sophia = new Person { Name = "Sophia" };
             var brian = new Person { Name = "Brian" };
-            var developers = new Group { Name = "Developers", Members = { joe, jake, emily } };
+            var oldBob = new Person { Name = "Old Bob" };
+            var newBob = new Person { Name = "New Bob" };
+            var bobs = new Group { Name = "Bobs", Members = { oldBob, newBob } };
+            var developers = new Group { Name = "Developers", Members = { joe, jake, emily, bobs } };
 
             var parties = new List<IParty> { developers, sophia, brian };
 
