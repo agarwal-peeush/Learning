@@ -225,19 +225,10 @@ namespace Learning.DesignPatterns
             var bobs = new Group { Name = "Bobs", Members = { oldBob, newBob } };
             var developers = new Group { Name = "Developers", Members = { joe, jake, emily, bobs } };
 
-            var parties = new List<IParty> { developers, sophia, brian };
+            var parties = new Group { Name = "Root", Members = { developers, sophia, brian } };
+            parties.Gold = goldForKill;
 
-            var totalToSplitBy = parties.Count;
-
-            var amountForEach = goldForKill / totalToSplitBy;
-            var leftOver = goldForKill % totalToSplitBy;
-
-            foreach (var party in parties)
-            {
-                party.Gold += amountForEach + leftOver;
-                leftOver = 0;
-                party.Stats();
-            }
+            parties.Stats();
 
             #endregion
         }
