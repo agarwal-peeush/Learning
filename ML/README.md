@@ -473,3 +473,36 @@ There are three ways in which we can calculate error:
   ![CostFunction](Readme.Images/ModelEvaluation/CostFunctionDefinition.jpg)
   
   If you look at this equation carefully, it is just similar to sum of squared errors, with just a factor of 1/2m is multiplied in order to ease mathematics. So in order to improve our prediction, we need to minimize the cost function. For this purpose we use the gradient descent algorithm. So let us understand how it works.
+
+##### Gradient Descent Algorithm [Source](https://www.analyticsvidhya.com/blog/2017/03/introduction-to-gradient-descent-algorithm-along-its-variants/)
+###### Introduction
+Optimization basically means getting the optimal output for your problem. Optimization in machine learning has a slight difference. Generally, while optimizing, we know exactly how our data looks like and what areas we want to improve. But in machine learning we have no clue how our “new data” looks like, let alone try to optimize on it. So in ML, we perform optimization on the training data and check its performance on a new validation data.
+
+###### What is Gradient Descent?
+To explain Gradient Descent, I’ll use the classic mountaineering example.   
+Suppose you are at the top of a mountain, and you have to reach a lake which is at the lowest point of the mountain (a.k.a valley). A twist is that you are *blindfolded* and you have zero visibility to see where you are headed. So, what approach will you take to reach the lake?      
+![GradientDescent_MountaineeringExample](Readme.Images/GradientDescent/MountaineeringExample.jpg)
+
+The best way is to check the ground near you and observe where the land tends to descend. This will give an idea in what direction you should take your first step. If you follow the descending path, it is very likely you would reach the lake.
+
+To represent this graphically, notice the below graph:      
+![GradientDescent_GraphExample](Readme.Images/GradientDescent/GraphExample.jpg)
+
+Let us now map this scenario in mathematical terms.
+
+Suppose we want to find out the best parameters (&theta;<sub>0</sub>) and (&theta;<sub>1</sub>) for our learning algorithm. Similar to the analogy above, we see and find similar mountains and valleys when we plot our *cost space*. Cost space is nothing but how our algorithm would perform when we choose a particular value for a parameter.
+
+So on the y-axis, we have the cost J(&theta;<sub>0</sub>, &theta;<sub>1</sub>) against our parameters &theta;<sub>0</sub> and &theta;<sub>1</sub> on x-axis and z-axis respectively. Here, hills are represented by red region, which have high cost, and valleys are represented by blue region, which have low cost.
+
+Gradient Descent algorithms can be classified by 2 methods mainly:  
++ **On the basis of data ingenstion:**
+  + Full Batch Gradient Descent Algorithm    
+    In full batch gradient descent algorithm, you use whole data at once to compute the gradient.
+  + Stochastic Gradient Descent Algorithm    
+    In stochastic gradient descent algorithm, you take a sample while computing the gradient.
++ **On the basis of differentiation techniques:**
+  + First order Differentiation
+  + Second order Differentiation    
+
+  Gradient descent requires calculation of gradient by differentiation of cost function. We can either use first order differentiation or second order differentiation.
+
