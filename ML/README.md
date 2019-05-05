@@ -449,7 +449,7 @@ But this is not so cool to simply predict the average value.
 #### Model 2 - Average sales by Location
 We know that Location plays a vital role in the sales of an item. Therefore, let us use the location of item in dataset. So, basically calculate average sales for each location type and predict accordingly. This should reduce the error. Now, what if there are multiple features on which sales would depend on? How would we predict sales using this information? Linear Regression comes to our rescue. 
 
-#### Model 3 - Linear Regression
+#### Model 3 - Linear Regression (*Outlet_Establishment_Year*,*Item_MRP*)
 ##### Introduction
 Linear regression is the simplest and most widely used statistical technique for predictive modeling. It basically gives us an equation, where we have our features as independent variables, on which our target variable is dependent upon. Linear regression equation looks like this:   
 <code>Y = &Theta;<sub>1</sub>X<sub>1</sub> + &Theta;<sub>2</sub>X<sub>2</sub> + ... + &Theta;<sub>n</sub>X<sub>n</sub>
@@ -507,3 +507,32 @@ Gradient Descent algorithms can be classified by 2 methods mainly:
 
   Gradient descent requires calculation of gradient by differentiation of cost function. We can either use first order differentiation or second order differentiation.
 
+##### Linear Regression Model generation
+[Refer to Jupyter Notebook](BigMartSalesProblem/BigMartSales_Solution.ipynb#Linear-Regression-Model-Generation)
+
+##### Evaluate model
++ R-Square    
+  It determines how much of the total variation in Y (dependent variable) is explained by the variation in X (independent variable). Mathematically, it can be written as:    
+  ![R-square formula](Readme.Images/ModelEvaluation/R-Square_Formula.jpg)    
+  The value of R-square is always between 0 and 1, where 
+  + 0 means that the model does not explain any variability in the target variable(Y), and, 
+  + 1 means that it explains full variability in the target variable(Y).    
+  
+  [R-Square example](BigMartSalesProblem/BigMartSales_Solution.ipynb#Model-Evaluation)    
+  The only drawback of R<sup>2</sup> is that if new predictors (X) are added to our model, R<sup>2</sup> only increases or remains constant but it never decreases. We can not judge that by increasing complexity of our model, are we making it more accurate? That is why, we use *Adjusted R-Square*. 
++ Adjusted R-Square    
+  It is the modified form of R-Square that has been adjusted for the number of predictors in the model. It incorporates model’s degree of freedom. The adjusted R-Square only increases if the new term improves the model accuracy.    
+  ![Adjusted-R-square formula](Readme.Images/ModelEvaluation/Adjusted-R-Square_Formula.jpg)    
+  where R<sup>2</sup> = Sample R square, p = Number of predictors, N = total sample size
+
+#### Model 4 - Linear Regression with more variables
+##### Model generation
+[Refer to Jupyter Notebook](BigMartSalesProblem/BigMartSales_Solution.ipynb#Model-4---Linear-Regression-with-more-variables)
+
+##### Model evaluation
+[Refer to Jupyter Notebook](BigMartSalesProblem/BigMartSales_Solution.ipynb#Model-evaluation---R-square)    
+Therefore we can see that the mse is further reduced. There is an increase in the value of R-square, does it mean that the addition of item weight is useful for our model?
+
+#### Model 5 - Linear Regression with all variables
+##### Model generation
+[Refere to Jupyter Notebook](BigMartSalesProblem/BigMartSales_Solution.ipynb#Model-5---Linear-Regression-with-all-features)
