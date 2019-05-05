@@ -432,3 +432,44 @@ array([[306108, 313056, 320004], [347742, 355635, 363528], [389376, 398214, 4070
   Matrix multiplication is used in linear and logistic regression when we calculate the value of output variable by parameterized vector method.
 
 [Linear Algebra course on Khan Academy](https://www.khanacademy.org/math/linear-algebra)
+
+### Simple models for prediction
+
+Let us start with making predictions using a few simple ways to start with. What could be the simplest way to predict the sales of an item?
+
+#### Model 1 - Mean Sales
+If we have to predict sales for an item - it would be the average over last few days/weeks/months. But how good that model would be?        
+There are various ways in which we can evaluate how good is our model. The most common way is **Mean Squared Error**.
+
+**Prediction error:** The simplest way of calculating error is to calculate the difference between predicted and actual values. However, if we simply add them, they might cancel out, so we square these errors before adding. We also divide them by the number of data points to calculate a mean error since it should not be dependent on number of data points.   
+![Mean Squared Error](Readme.Images/ModelEvaluation/Mean_Squared_Error.jpg)     
+This is known as the **Mean Squared Error**. Here e<sub>1</sub>, e<sub>2</sub>, ...., e<sub>n</sub> are the difference between actual and predicted values. 
+But this is not so cool to simply predict the average value. 
+
+#### Model 2 - Average sales by Location
+We know that Location plays a vital role in the sales of an item. Therefore, let us use the location of item in dataset. So, basically calculate average sales for each location type and predict accordingly. This should reduce the error. Now, what if there are multiple features on which sales would depend on? How would we predict sales using this information? Linear Regression comes to our rescue. 
+
+#### Linear Regression
+Linear regression is the simplest and most widely used statistical technique for predictive modeling. It basically gives us an equation, where we have our features as independent variables, on which our target variable is dependent upon. Linear regression equation looks like this:   
+<code>Y = &Theta;<sub>1</sub>X<sub>1</sub> + &Theta;<sub>2</sub>X<sub>2</sub> + ... + &Theta;<sub>n</sub>X<sub>n</sub>
+</code>
+Here we have Y as our dependent variable. X's are the independent variables and all &Theta;'s are the coefficients. *Coefficients are basically the weights assigned to the features, based on their importance.* Linear regression with only one feature, i.e., only one independent variable  has equation like,  
+<code>Y = &Theta;<sub>1</sub>X + &Theta;<sub>0</sub>
+</code>
+This equation is called a Simple Linear Regression equation, which represents a straight line, where &theta;<sub>0</sub> is Intercept, &theta;<sub>1</sub> is the slope of line. 
+
+##### Best fit line
+The main purpose of the best fit line is that our predicted values should be closer to our actual or the observed values. In other words, we tend to minimize the difference between the values predicted by us and the observed values, and which is actually termed as error. Graphical representation of error is as shown below. These errors are also called as residuals. The residuals are indicated by the vertical lines showing the difference between the predicted and actual value.    
+![Residuals_Linear_Regression](Readme.Images/ModelEvaluation/BestFitLine_Residuals.jpg)
+
+How to calculate error?     
+There are three ways in which we can calculate error:   
++ Sum of residuals(&sum;(Y - h(X))) - It might result in cancelling out of +ve and -ve errors.
++ Sum of absolute value of residuals(&sum;(|Y - h(X)|)) - absolute value would prevent cancellation of errors.
++ Sum of square of residuals(&sum;(Y - h(X))<sup>2</sup>) - Here we penalize higher error value much more as compared to a smaller one, so that there is a significant difference betweeb making big errors and small errors, which makes it easy to differentiate and select the best fit line. It is denoted by SS<sub>residuals</sub>.
+  ![Sum of Square of Residuals](Readme.Images/ModelEvaluation/SumOfSquaredOfResiduals.jpg)
+
+  where h(x) is the predicted value, y is the actual value, and m is the number of rows in the training set. **The Cost Function** which is basically used to define and measure the error of a model.      
+  ![CostFunction](Readme.Images/ModelEvaluation/CostFunctionDefinition.jpg)
+  
+  If you look at this equation carefully, it is just similar to sum of squared errors, with just a factor of 1/2m is multiplied in order to ease mathematics. So in order to improve our prediction, we need to minimize the cost function. For this purpose we use the gradient descent algorithm. So let us understand how it works.
