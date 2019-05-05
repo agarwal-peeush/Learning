@@ -449,7 +449,8 @@ But this is not so cool to simply predict the average value.
 #### Model 2 - Average sales by Location
 We know that Location plays a vital role in the sales of an item. Therefore, let us use the location of item in dataset. So, basically calculate average sales for each location type and predict accordingly. This should reduce the error. Now, what if there are multiple features on which sales would depend on? How would we predict sales using this information? Linear Regression comes to our rescue. 
 
-#### Linear Regression
+#### Model 3 - Linear Regression
+##### Introduction
 Linear regression is the simplest and most widely used statistical technique for predictive modeling. It basically gives us an equation, where we have our features as independent variables, on which our target variable is dependent upon. Linear regression equation looks like this:   
 <code>Y = &Theta;<sub>1</sub>X<sub>1</sub> + &Theta;<sub>2</sub>X<sub>2</sub> + ... + &Theta;<sub>n</sub>X<sub>n</sub>
 </code>
@@ -476,7 +477,7 @@ There are three ways in which we can calculate error:
 
 ##### Gradient Descent Algorithm [Source](https://www.analyticsvidhya.com/blog/2017/03/introduction-to-gradient-descent-algorithm-along-its-variants/)
 ###### Introduction
-Optimization basically means getting the optimal output for your problem. Optimization in machine learning has a slight difference. Generally, while optimizing, we know exactly how our data looks like and what areas we want to improve. But in machine learning we have no clue how our “new data” looks like, let alone try to optimize on it. So in ML, we perform optimization on the training data and check its performance on a new validation data.
+Optimization basically means getting the optimal output for your problem. Optimization in ML has a slight difference. Generally, while optimizing, we know exactly how our data looks like and what areas we want to improve. But in ML we have no clue how our “new data” looks like, let alone try to optimize on it. So in ML, we perform optimization on the training data and check its performance on a new validation data.
 
 ###### What is Gradient Descent?
 To explain Gradient Descent, I’ll use the classic mountaineering example.   
