@@ -1,10 +1,47 @@
-# Learning-CSharp
+﻿# Learning-CSharp
 It includes projects, codes for all types of learning using c-sharp. 
 
 [![Build Status](https://dev.azure.com/agarwalpeeush/Learning/_apis/build/status/agarwal-peeush.Learning?branchName=master)](https://dev.azure.com/agarwalpeeush/Learning/_build/latest?definitionId=1&branchName=master)
 
 ## Learning.Algorithms
 This includes learning for different types of algorithms. 
+
+### Analysis of algorithms
+Given two programs of same problem, how do we decide which one is better? We could take different approaches to decide which one is better. 
+
+Feed different programs to a solution and find out the best program which is taking less time amongst all and passing all Test cases. Or we can take Asymptotic analysis. 
+#### Asymptotic analysis 
+Theoretical in nature. It measures order of growth in terms of input size. For example, we have Binary search and Linear search algorithms. Binary search takes logarithmic time of 100\*log(n) + 100 and Linear search takes Linear time of 2\*n + 3. Which one is better?
+#### Asymptotic notations 
+There are mathematical functions which denotes order of growth in terms of input size. 
++ **Theta(&theta;) notation:** This bounds a function from above and below, so it defines *exact* asymptotic behavior. &theta;(n<sup>2</sup>) tells us that highest order of equation can be n<sup>2</sup> and not lower or higher than that. For example, 100\*n<sup>2</sup> + 40 satisfies the equation, but 100\*n<sup>3</sup> or 100\*n doesn't satisfy it.    
+  <pre><code>&theta;(g(n)) = { f(n): there exist positive constants c<sub>1</sub>, c<sub>2</sub> and n<sub>0</sub> such that 
+                     0 <= c<sub>1</sub>*g(n) <= f(n) <= c<sub>2</sub>*g(n) for all n >= n<sub>0</sub> }</code></pre>
+  The above definition means, if f(n) is theta of g(n), then the value f(n) is always between c<sub>1</sub>\*g(n) and c<sub>2</sub>\*g(n) for large values of n (n >= n<sub>0</sub>). The definition of theta also requires that f(n) must be non-negative for values of n greater than n<sub>0</sub>.
++ **Omega(Ω) notation:** This defines an lower bound of an algorithm, it bounds a function only from lower. Ω(n<sup>2</sup>) tells us that highest order of equation can be greater than or equal to n<sup>2</sup>. For example, 100\*n<sup>3</sup> satisifies the equation, but 100\*n doesn't satisfy it.    
+  Ω Notation can be useful when we have lower bound on time complexity of an algorithm. The Omega notation is the least used notation among all three.
+
+  For a given function g(n), we denote by Ω(g(n)) the set of functions.
+  <pre><code>Ω(g(n)) = { f(n): there exist positive constants c and n<sub>0</sub> such that 
+                     0 <= c*g(n) <= f(n) for all n >= n<sub>0</sub> }</code></pre>
++ **Big-O(O) notation:** This defines an upper bound of an algorithm, it bounds a function only from above. O(n<sup>2</sup>) tells us that highest order of equation can be lower than or equal to n<sup>2</sup>. For example, 100\*n<sup>2</sup> satisfies the equation, but 100\*<sup>3</sup> doesn't satisfy it.    
+  The Big O notation is useful when we only have upper bound on time complexity of an algorithm. Many times we easily find an upper bound by simply looking at the algorithm.    
+  <pre><code>O(g(n)) = { f(n): there exist positive constants c and n<sub>0</sub> such that 
+                     0 <= f(n) <= c*g(n) for all n >= n<sub>0</sub> }</code></pre>
+#### Worst case, Average case and Best case 
+We can have three cases to analyze an algorithm:
++ **Worst case analysis (Usually done):** In the worst case analysis, we calculate upper bound on running time of an algorithm. We must know the case that causes the maximum number of operations to be executed. 
++ **Average Case Analysis (Sometimes done):** In average case analysis, we take all possible inputs and calculate computing time for all of the inputs. Sum all the calculated values and divide the sum by total number of inputs. We must know (or predict) distribution of cases. 
++ **Best Case Analysis (Bogus):** In the best case analysis, we calculate lower bound on running time of an algorithm. We must know the case that causes minimum number of operations to be executed. 
+
+#### Practice
+As we know, Quick sort takes n<sup>2</sup> in worst cases and n\*log(n) in other cases.     
++ Statement 1: Time complexity of Quick sort is &theta;(n<sup>2</sup>).   
+  It is False, because in all cases time complexity of Quick sort is not n<sup>2</sup>. 
++ Statement 2: Time complexity of Quick sort is O(n<sup>2</sup>).   
+  It is True, because in all cases time complexity is equal or less than n<sup>2</sup>. 
++ Statement 3: Time complexity of Quick sort is Ω(n\*log(n)).   
+  It is True, because in all cases time complexity is equal or greater than n\*log(n). 
 
 ### Prime numbers
 
