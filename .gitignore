@@ -9,5 +9,6 @@
 /Learning-CSharp/*/obj/*
 /Learning/*/*.csproj.user
 /ML/*/.ipynb_checkpoints/*
+/ML/*/*/.ipynb_checkpoints/*
 /ML/*/*.rmd
 /Learning-CSharp/Learning.DesignPatterns/Learning.DesignPatterns.csproj.user
