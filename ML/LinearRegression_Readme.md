@@ -17,6 +17,8 @@ We know that Location plays a vital role in the sales of an item. Therefore, let
 
 ## Model 3 - Linear Regression (*Outlet_Establishment_Year*,*Item_MRP*)
 ### Introduction
+Linear regression is **Supervised learning algorithm** which goal is to **predict continuous, numerical values** based on given data input. From geometrical perspective, each data sample is a point. Linear Regression tries to find parameters of the linear function, so **the distance between all the points and the line is as small as possible**. Algorithm used for parameters update is called **Gradient Descent algorithm**.
+
 Linear regression is the simplest and most widely used statistical technique for predictive modeling. It basically gives us an equation, where we have our features as independent variables, on which our target variable is dependent upon. Linear regression equation looks like this:   
 <code>Y = &Theta;<sub>1</sub>X<sub>1</sub> + &Theta;<sub>2</sub>X<sub>2</sub> + ... + &Theta;<sub>n</sub>X<sub>n</sub>
 </code>
