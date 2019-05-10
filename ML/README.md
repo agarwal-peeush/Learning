@@ -45,3 +45,5 @@ coef.plot(kind='bar', title='Model Coefficients')
 ![Predictor's Coefficient's Magnitude](Readme.Images/Predictors_Coefficients_Magnitude.jpg)
 
 We can see that coefficients of *Outlet_Identifier_OUT027* and *Outlet_Type_Supermarket_Type3*(last 2) is much higher as compared to rest of the coefficients. Therefore the total sales of an item would be more driven by these two features. How can we reduce the magnitude of coefficients in our model? For this purpose, we have different types of regression techniques which uses regularization to overcome this problem.
+
+## [Logistic Regression](LogisticRegression_Readme.md)
