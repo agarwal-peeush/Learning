@@ -76,6 +76,10 @@
     <Compile Include="DecoratorPattern\ConcreteComponent\LargePizza.cs" />
     <Compile Include="DecoratorPattern\ConcreteComponent\MediumPizza.cs" />
     <Compile Include="DecoratorPattern\ConcreteComponent\SmallPizza.cs" />
+    <Compile Include="DecoratorPattern\ConcreteDecorator\Cheese.cs" />
+    <Compile Include="DecoratorPattern\ConcreteDecorator\Ham.cs" />
+    <Compile Include="DecoratorPattern\ConcreteDecorator\Peppers.cs" />
+    <Compile Include="DecoratorPattern\Decorator\PizzaDecorator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BridgePattern\StandardFormatter.cs" />
@@ -84,9 +88,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DecoratorPattern\ConcreteDecorator\" />
-    <Folder Include="DecoratorPattern\Decorator\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

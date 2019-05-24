@@ -3,7 +3,9 @@ using Learning.DesignPatterns.BuilderPattern;
 using Learning.DesignPatterns.ChainOfResponsibilityPattern;
 using Learning.DesignPatterns.CommandPattern;
 using Learning.DesignPatterns.CompositePattern;
+using Learning.DesignPatterns.DecoratorPattern.Component;
 using Learning.DesignPatterns.DecoratorPattern.ConcreteComponent;
+using Learning.DesignPatterns.DecoratorPattern.ConcreteDecorator;
 using System;
 using System.Collections.Generic;
 
@@ -25,11 +27,11 @@ namespace Learning.DesignPatterns
 
         private static void DemoBridgePattern()
         {
-            var documents = new List<Manuscript>();
+            List<Manuscript> documents = new List<Manuscript>();
             //var formatter = new StandardFormatter();
-            var formatter = new BackwardsFormatter();
+            BackwardsFormatter formatter = new BackwardsFormatter();
 
-            var faq = new FAQ(formatter)
+            FAQ faq = new FAQ(formatter)
             {
                 Title = "The Bridge pattern FAQ",
             };
@@ -37,7 +39,7 @@ namespace Learning.DesignPatterns
             faq.Questions.Add("When do we use it?", "When you need to separate an abstraction from an implementation");
             documents.Add(faq);
 
-            var book = new Book(formatter)
+            Book book = new Book(formatter)
             {
                 Title = "Lots of patterns",
                 Author = "PA",
@@ -45,7 +47,7 @@ namespace Learning.DesignPatterns
             };
             documents.Add(book);
 
-            var paper = new TermPaper(formatter)
+            TermPaper paper = new TermPaper(formatter)
             {
                 Class = "Design Patterns",
                 Student = "P",
@@ -54,7 +56,7 @@ namespace Learning.DesignPatterns
             };
             documents.Add(paper);
 
-            foreach (var doc in documents)
+            foreach (Manuscript doc in documents)
             {
                 doc.Print();
             }
@@ -88,9 +90,9 @@ namespace Learning.DesignPatterns
             //sandwich.Display();
 
             //      Solution to Problem 4: Create SandwichMaker which handles the process/steps of building a Sandwich. It uses the builder passed to build a Sandwich
-            var maker = new SandwichMaker(new MySandwichBuilder());
+            SandwichMaker maker = new SandwichMaker(new MySandwichBuilder());
             maker.BuildSandwich();
-            var sandwich = maker.GetSandwich();
+            Sandwich sandwich = maker.GetSandwich();
             sandwich.Display();
 
 
@@ -143,21 +145,20 @@ namespace Learning.DesignPatterns
             #endregion
 
             #region Solution through Chain of Responsibility pattern
-            var william = new ExpenseHandler(new Employee("William Worker", decimal.Zero));
-            var mary = new ExpenseHandler(new Employee("Mary Manager", 1000));
-            var victor = new ExpenseHandler(new Employee("Victor VicePres", 5000));
-            var paula = new ExpenseHandler(new Employee("Paula President", 20000));
+            ExpenseHandler william = new ExpenseHandler(new Employee("William Worker", decimal.Zero));
+            ExpenseHandler mary = new ExpenseHandler(new Employee("Mary Manager", 1000));
+            ExpenseHandler victor = new ExpenseHandler(new Employee("Victor VicePres", 5000));
+            ExpenseHandler paula = new ExpenseHandler(new Employee("Paula President", 20000));
 
             william.RegisterNext(mary);
             mary.RegisterNext(victor);
             victor.RegisterNext(paula);
 
-            decimal expenseReportAmount;
-            while (ConsoleInput.TryReadDecimal("Expense report amount:", out expenseReportAmount))
+            while (ConsoleInput.TryReadDecimal("Expense report amount:", out decimal expenseReportAmount))
             {
                 IExpenseReport expense = new ExpenseReport(expenseReportAmount);
 
-                var response = william.Approve(expense);
+                ApprovalResponse response = william.Approve(expense);
                 Console.WriteLine($"The request was {response}.");
             }
             #endregion
@@ -217,17 +218,17 @@ namespace Learning.DesignPatterns
             #endregion
 
             #region Logic with CompositePattern
-            var joe = new Person { Name = "Joe" };
-            var jake = new Person { Name = "Jake" };
-            var emily = new Person { Name = "Emily" };
-            var sophia = new Person { Name = "Sophia" };
-            var brian = new Person { Name = "Brian" };
-            var oldBob = new Person { Name = "Old Bob" };
-            var newBob = new Person { Name = "New Bob" };
-            var bobs = new Group { Name = "Bobs", Members = { oldBob, newBob } };
-            var developers = new Group { Name = "Developers", Members = { joe, jake, emily, bobs } };
+            Person joe = new Person { Name = "Joe" };
+            Person jake = new Person { Name = "Jake" };
+            Person emily = new Person { Name = "Emily" };
+            Person sophia = new Person { Name = "Sophia" };
+            Person brian = new Person { Name = "Brian" };
+            Person oldBob = new Person { Name = "Old Bob" };
+            Person newBob = new Person { Name = "New Bob" };
+            Group bobs = new Group { Name = "Bobs", Members = { oldBob, newBob } };
+            Group developers = new Group { Name = "Developers", Members = { joe, jake, emily, bobs } };
 
-            var parties = new Group { Name = "Root", Members = { developers, sophia, brian } };
+            Group parties = new Group { Name = "Root", Members = { developers, sophia, brian } };
             parties.Gold = goldForKill;
 
             parties.Stats();
@@ -237,10 +238,22 @@ namespace Learning.DesignPatterns
 
         private static void DemoDecoratorPattern()
         {
-            var largePizza = new LargePizza();
+            #region Without DecoratorPattern
+            //LargePizza largePizza = new LargePizza();
 
-            Console.WriteLine(largePizza.Description);
+            //Console.WriteLine(largePizza.Description);
+            //Console.WriteLine("{0:C2}", largePizza.CalculateCost()); 
+            #endregion
+
+            #region With DecoratorPattern
+            Pizza largePizza = new LargePizza();
+            largePizza = new Cheese(largePizza);
+            largePizza = new Ham(largePizza);
+            largePizza = new Peppers(largePizza);
+
+            Console.WriteLine(largePizza.GetDescription());
             Console.WriteLine("{0:C2}", largePizza.CalculateCost());
+            #endregion
 
             Console.ReadKey();
         }
