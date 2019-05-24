@@ -3,6 +3,7 @@ using Learning.DesignPatterns.BuilderPattern;
 using Learning.DesignPatterns.ChainOfResponsibilityPattern;
 using Learning.DesignPatterns.CommandPattern;
 using Learning.DesignPatterns.CompositePattern;
+using Learning.DesignPatterns.DecoratorPattern.ConcreteComponent;
 using System;
 using System.Collections.Generic;
 
@@ -16,7 +17,8 @@ namespace Learning.DesignPatterns
             //DemoBuilderPattern();
             //DemoChainOfResponsibilityPattern();
             //DemoCommandPattern(args);
-            DemoCompositePattern();
+            //DemoCompositePattern();
+            DemoDecoratorPattern();
 
             Console.ReadKey();
         }
@@ -231,6 +233,16 @@ namespace Learning.DesignPatterns
             parties.Stats();
 
             #endregion
+        }
+
+        private static void DemoDecoratorPattern()
+        {
+            var largePizza = new LargePizza();
+
+            Console.WriteLine(largePizza.Description);
+            Console.WriteLine("{0:C2}", largePizza.CalculateCost());
+
+            Console.ReadKey();
         }
     }
 }
