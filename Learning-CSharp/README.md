@@ -210,3 +210,21 @@ If we have in logic:
 + Distribution
 + Can we add an interface?
 
+### Decorator pattern or Wrapper pattern
+#### Intent
++ Add functionality to existing objects dynamically.
++ Alternative to sub classing
++ Flexible design
++ Support Open Closed Principle (Open for Extension but Closed for modification)
+
+#### When to use?
++ Legacy systems
++ Add functionality to controls
++ Sealed classes
+
+#### Structure
+![Structure](Readme.Images/DecoratorPattern_Structure.jpg)
+
+#### How does it work?
++ It wrap objects
+
