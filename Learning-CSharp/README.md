@@ -228,3 +228,17 @@ If we have in logic:
 #### How does it work?
 + It wrap objects
 
+#### Consequences
++ The original object is unaware of any decorations
++ There is no one big feature-laden class with all the options in it
++ The decorations can be composed together in a mix-and-match fashion
++ Can increase complexity of code
+
+#### Related patterns
++ Adapter
++ Bridge
++ Composite
++ Facade
++ Flyweight
++ Proxy
+
