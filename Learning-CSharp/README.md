@@ -242,3 +242,29 @@ If we have in logic:
 + Flyweight
 + Proxy
 
+### Event Aggregator Pattern
+#### Motivating example
++ An order entry system
++ Multiple screens
+  + Order, Order Details, Order History, Shipping
++ Need to be notified
+  + When an order is selected
+  + When an order is created
+  + When an order update is cancelled
+  + When an order is saved
+  + When an order is deleted
+
+#### Intent
++ Simplify event registration by providing a single centralized store
++ Reduce coupling between publishers and subscribers
++ Reduce friction for introducing new events
++ Reduce memory management issues related to eventing
+
+#### When to use?
++ You are bulding a composite application
++ You have complex screens
++ You have many publishers and subscribers
++ You have many events
++ New events are added frequently
++ Static events are a red flag
+
