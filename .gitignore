@@ -13,3 +13,5 @@
 /ML/**/*.ipynb_checkpoints/*
 /ML/**/*.rmd
 Learning-Python/.ipynb_checkpoints/*
+/.venv
+/.vscode

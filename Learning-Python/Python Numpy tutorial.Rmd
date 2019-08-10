@@ -1,0 +1,168 @@
+---
+jupyter:
+  jupytext:
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.0'
+      jupytext_version: 1.0.3
+  kernelspec:
+    display_name: Python 3
+    language: python
+    name: python3
+---
+
+```{python}
+import numpy as np
+```
+
+```{python}
+pythonList = [1, 2, 3, 4,5]
+print(pythonList)
+```
+
+```{python}
+npArr = np.array(pythonList)
+print(npArr)
+print(type(npArr))
+```
+
+```{python}
+# How much memory is consumed by the list and array?
+# Program to verify/validate the space efficiency
+# Store 1000 elements in Python List and Numpy Array. Check size of each
+
+import sys # sys is built-in module to getSize
+
+# Create 1000 numbers
+s = range(1000)
+print(sys.getsizeof(1)*len(s), " bytes")
+
+# Create 1000 numbers in np
+s1 = np.arange(1000)
+print("Numpy array's item size ", s1.itemsize, " bytes")
+print(s1.itemsize * s1.size, " bytes")
+
+```
+
+```{python}
+# Time complexity
+
+# 2 lists in python | Add both | generate a new list
+# 2 ndarray in Numpy | Add both | generate a new list
+
+# Time tracking in milliseconds
+```
+
+```{python}
+import time
+
+SIZE = 1000000
+
+# Python lists
+L1 = range(SIZE)
+L2 = range(SIZE)
+
+# Numpy arrays
+N1 = np.arange(SIZE)
+N2 = np.arange(SIZE)
+
+start = time.time()
+# Add python lists index-wise
+result = [(x+y) for x,y in zip(L1, L2)]
+end = time.time()
+print("Python list operation timings: ", (end-start)*1000, " ms")
+
+start = time.time()
+# Add numpy arrays
+N_result = N1 + N2
+end = time.time()
+print("Numpy array list operation timings: ", (end-start)*1000, " ms")
+```
+
+```{python}
+# 2-d array
+
+x = np.array([[1,2],[3,4]])
+print(x)
+```
+
+```{python}
+print(x[0][0])
+print(x[1][1])
+```
+
+```{python}
+np.sum(x) # sum of all elements
+```
+
+```{python}
+np.sum(x, axis=0) # sum of columns
+
+```
+
+```{python}
+np.sum(x, axis=1) # sum of rows
+```
+
+```{python}
+y = np.array([[5,6],[7,8]])
+```
+
+```{python}
+x+y
+```
+
+```{python}
+x-y
+```
+
+```{python}
+x*y
+```
+
+```{python}
+x/y
+```
+
+```{python}
+# Filteration Part-1
+
+a = np.array([[1,2],[3,4],[5,6]])
+a
+```
+
+```{python}
+bool_idx = a>2
+print(a[bool_idx])
+```
+
+```{python}
+# Filteration Part-2
+
+a = np.array([[1,2,3],[4,5,6],[7,8,9],[10,11,12]])
+```
+
+```{python}
+print(a)
+```
+
+```{python}
+# print 1,6,7,11
+#print(a[0,2,0,1])
+col_index = np.array([0,2,0,1])
+print(a[np.arange(4), col_index])
+
+```
+
+```{python}
+print(a[[0,1,2,3],col_index])
+```
+
+```{python}
+a[:2,1:3]
+```
+
+```{python}
+
+```
