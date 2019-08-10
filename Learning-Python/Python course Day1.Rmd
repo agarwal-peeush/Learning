@@ -1,0 +1,60 @@
+---
+jupyter:
+  jupytext:
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.0'
+      jupytext_version: 1.0.3
+  kernelspec:
+    display_name: Python 3
+    language: python
+    name: python3
+---
+
+```{python}
+price = 12.5
+bag = 100
+isHuman = True
+```
+
+```{python}
+print(price)
+print(bag)
+print(isHuman)
+```
+
+```{python}
+print(type(price))
+print(type(bag))
+print(type(isHuman))
+```
+
+```{python}
+# Get input from user
+name = input("Enter your name\n")
+print('Hello ' + name)
+```
+
+```{python}
+# Now let's do some math
+num1 = input("Enter first number\n") # Whatever we input is treated as character/string
+num2 = input("Enter second number\n")
+
+print(type(num1))
+print(type(num2))
+
+print(num1 + num2) # concatenated
+
+num1 = int(num1)
+num2 = int(num2)
+
+print(type(num1))
+print(type(num2))
+
+print (num1 + num2) # added
+```
+
+```{python}
+
+```
