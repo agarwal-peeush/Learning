@@ -2,15 +2,20 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-*.Rmd
+# Microsoft Visual Studio ignore items
 **/.vs
+/.vscode
+
+# C-Sharp ignore items
+/Learning-CSharp/packages
+/Learning-CSharp/**/bin/*
+/Learning-CSharp/**/obj/*
+/Learning-CSharp/**/*.csproj.user
+
+# Python and Jupyter notebook ignore items
+*.Rmd
 **/__pycache__
 /.venv
-/.vscode
-/Learning-CSharp/packages
-/Learning-CSharp/*/bin/*
-/Learning-CSharp/*/obj/*
-/Learning-CSharp/**/*.csproj.user
 /Gemfile.lock
 /Gemfile
 **/*.ipynb_checkpoints/*
