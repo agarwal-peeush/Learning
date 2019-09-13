@@ -8,8 +8,8 @@
 /.venv
 /.vscode
 /Learning-CSharp/packages
-/Learning-CSharp/*/bin/*
-/Learning-CSharp/*/obj/*
+/Learning-CSharp/**/bin/*
+/Learning-CSharp/**/obj/*
 /Learning-CSharp/**/*.csproj.user
 /Gemfile.lock
 /Gemfile
