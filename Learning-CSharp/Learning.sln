@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.757
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29411.108
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learning.Algorithms", "Learning.Algorithms\Learning.Algorithms.csproj", "{D327A153-672D-4F6D-B986-FC1E69CD8738}"
 EndProject
@@ -16,7 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learning.DesignPatterns.EventAggregator.BeforeEA", "Learning.DesignPatterns.EventAggregator.BeforeEA\Learning.DesignPatterns.EventAggregator.BeforeEA.csproj", "{21ACAFDA-588A-4892-B220-845555FEA02B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learning.SolidPrinciples", "Learning.SolidPrinciples\Learning.SolidPrinciples.csproj", "{FCD2E686-F197-4C31-87B1-713CB3472FB5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learning.SolidPrinciples", "Learning.SolidPrinciples\Learning.SolidPrinciples.csproj", "{FCD2E686-F197-4C31-87B1-713CB3472FB5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
