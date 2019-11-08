@@ -11,6 +11,10 @@
 /Learning-CSharp/**/bin/*
 /Learning-CSharp/**/obj/*
 /Learning-CSharp/**/*.csproj.user
+/DotNetCore3_0/**/bin/Debug/*
+/DotNetCore3_0/**/obj/*
+/DotNetCore3_0/**/bin/Debug/*
+/DotNetCore3_0/**/obj/*
 
 # Python and Jupyter notebook ignore items
 *.Rmd
