@@ -287,11 +287,10 @@ namespace Learning.DesignPatterns
         {
             var obj1 = SingletonPattern.Logger.Instance;
             obj1.Log("First Object message");
+            Console.WriteLine(obj1.GetHashCode());
 
             var obj2 = SingletonPattern.Logger.Instance;
             obj2.Log("Second Object message");
-
-            Console.WriteLine(obj1.GetHashCode());
             Console.WriteLine(obj2.GetHashCode());
         }
     }
