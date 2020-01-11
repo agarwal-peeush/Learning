@@ -9,6 +9,7 @@ using Learning.DesignPatterns.DecoratorPattern.ConcreteDecorator;
 using Learning.DesignPatterns.MementoPattern;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Learning.DesignPatterns
 {
@@ -285,13 +286,28 @@ namespace Learning.DesignPatterns
         }
         private static void DemoSingletonPattern()
         {
-            var obj1 = SingletonPattern.Logger.Instance;
-            obj1.Log("First Object message");
-            Console.WriteLine(obj1.GetHashCode());
+            //Multi-threaded call
+            Parallel.Invoke(
+                () => DemoSingleton_Object1(),
+                () => DemoSingleton_Object2());
 
+            // Single-threaded call
+            //DemoSingleton_Object1();
+            //DemoSingleton_Object2();
+        }
+
+        private static void DemoSingleton_Object2()
+        {
             var obj2 = SingletonPattern.Logger.Instance;
             obj2.Log("Second Object message");
             Console.WriteLine(obj2.GetHashCode());
+        }
+
+        private static void DemoSingleton_Object1()
+        {
+            var obj1 = SingletonPattern.Logger.Instance;
+            obj1.Log("First Object message");
+            Console.WriteLine(obj1.GetHashCode());
         }
     }
 }
