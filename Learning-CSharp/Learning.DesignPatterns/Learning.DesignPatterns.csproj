@@ -80,10 +80,14 @@
     <Compile Include="DecoratorPattern\ConcreteDecorator\Ham.cs" />
     <Compile Include="DecoratorPattern\ConcreteDecorator\Peppers.cs" />
     <Compile Include="DecoratorPattern\Decorator\PizzaDecorator.cs" />
+    <Compile Include="MementoPattern\Editor.cs" />
+    <Compile Include="MementoPattern\EditorState.cs" />
+    <Compile Include="MementoPattern\History.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BridgePattern\StandardFormatter.cs" />
     <Compile Include="BridgePattern\TermPaper.cs" />
+    <Compile Include="SingletonPattern\Logger.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -6,6 +6,7 @@ using Learning.DesignPatterns.CompositePattern;
 using Learning.DesignPatterns.DecoratorPattern.Component;
 using Learning.DesignPatterns.DecoratorPattern.ConcreteComponent;
 using Learning.DesignPatterns.DecoratorPattern.ConcreteDecorator;
+using Learning.DesignPatterns.MementoPattern;
 using System;
 using System.Collections.Generic;
 
@@ -20,7 +21,9 @@ namespace Learning.DesignPatterns
             //DemoChainOfResponsibilityPattern();
             //DemoCommandPattern(args);
             //DemoCompositePattern();
-            DemoDecoratorPattern();
+            //DemoDecoratorPattern();
+            //DemoMementoPattern();
+            DemoSingletonPattern();
 
             Console.ReadKey();
         }
@@ -256,6 +259,40 @@ namespace Learning.DesignPatterns
             #endregion
 
             Console.ReadKey();
+        }
+
+        private static void DemoMementoPattern()
+        {
+            var editor = new Editor();
+            var history = new History();
+
+            editor.Content = "A";
+            history.Push(editor.CreateState());
+
+            editor.Content = "B";
+            history.Push(editor.CreateState());
+
+            editor.Content = "C";
+            //history.Push(editor.CreateState());
+
+            editor.Restore(history.Pop());
+
+            Console.WriteLine(editor.Content); //Should print "B"
+
+            editor.Restore(history.Pop());
+            Console.WriteLine(editor.Content); //Should print "A"
+
+        }
+        private static void DemoSingletonPattern()
+        {
+            var obj1 = SingletonPattern.Logger.Instance;
+            obj1.Log("First Object message");
+
+            var obj2 = SingletonPattern.Logger.Instance;
+            obj2.Log("Second Object message");
+
+            Console.WriteLine(obj1.GetHashCode());
+            Console.WriteLine(obj2.GetHashCode());
         }
     }
 }
