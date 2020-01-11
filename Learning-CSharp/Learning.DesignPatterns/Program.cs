@@ -286,7 +286,18 @@ namespace Learning.DesignPatterns
         }
         private static void DemoSingletonPattern()
         {
-            //Multi-threaded call
+            //Multi-threaded Lazy but Eager loading call
+            Parallel.Invoke(
+                () => DemoSingletonLazyButEager_Object1(),
+                () => DemoSingletonLazyButEager_Object2());
+
+
+            //Multi-threaded Eager loading call
+            Parallel.Invoke(
+                () => DemoSingletonEager_Object1(),
+                () => DemoSingletonEager_Object2());
+
+            //Multi-threaded LazyLoading call
             Parallel.Invoke(
                 () => DemoSingleton_Object1(),
                 () => DemoSingleton_Object2());
@@ -294,20 +305,45 @@ namespace Learning.DesignPatterns
             // Single-threaded call
             //DemoSingleton_Object1();
             //DemoSingleton_Object2();
-        }
 
-        private static void DemoSingleton_Object2()
-        {
-            var obj2 = SingletonPattern.Logger.Instance;
-            obj2.Log("Second Object message");
-            Console.WriteLine(obj2.GetHashCode());
-        }
+            void DemoSingletonLazyButEager_Object2()
+            {
+                var obj2 = SingletonPattern.Logger_LazyButEagerLoading.Instance;
+                obj2.Log("Second Object message");
+                Console.WriteLine(obj2.GetHashCode());
+            }
+            void DemoSingletonLazyButEager_Object1()
+            {
+                var obj1 = SingletonPattern.Logger_LazyButEagerLoading.Instance;
+                obj1.Log("First Object message");
+                Console.WriteLine(obj1.GetHashCode());
+            }
 
-        private static void DemoSingleton_Object1()
-        {
-            var obj1 = SingletonPattern.Logger.Instance;
-            obj1.Log("First Object message");
-            Console.WriteLine(obj1.GetHashCode());
+            void DemoSingletonEager_Object2()
+            {
+                var obj2 = SingletonPattern.Logger_EagerLoading.Instance;
+                obj2.Log("Second Object message");
+                Console.WriteLine(obj2.GetHashCode());
+            }
+            void DemoSingletonEager_Object1()
+            {
+                var obj1 = SingletonPattern.Logger_EagerLoading.Instance;
+                obj1.Log("First Object message");
+                Console.WriteLine(obj1.GetHashCode());
+            }
+
+            void DemoSingleton_Object2()
+            {
+                var obj2 = SingletonPattern.Logger.Instance;
+                obj2.Log("Second Object message");
+                Console.WriteLine(obj2.GetHashCode());
+            }
+            void DemoSingleton_Object1()
+            {
+                var obj1 = SingletonPattern.Logger.Instance;
+                obj1.Log("First Object message");
+                Console.WriteLine(obj1.GetHashCode());
+            }
         }
     }
 }
